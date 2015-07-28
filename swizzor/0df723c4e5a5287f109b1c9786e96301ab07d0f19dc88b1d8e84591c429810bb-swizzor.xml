@@ -1,0 +1,2133 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE doc [<!ENTITY comma '&#44;'>]>
+<!--
+Cuckoo Sandbox MAEC 4.1 malware analysis report
+http://www.cuckoosandbox.org
+-->
+<maecPackage:MAEC_Package 
+	xmlns:cyboxCommon="http://cybox.mitre.org/common-2"
+	xmlns:cybox="http://cybox.mitre.org/cybox-2"
+	xmlns:cyboxVocabs="http://cybox.mitre.org/default_vocabularies-2"
+	xmlns:AddressObj="http://cybox.mitre.org/objects#AddressObject-2"
+	xmlns:FileObj="http://cybox.mitre.org/objects#FileObject-2"
+	xmlns:NetworkConnectionObj="http://cybox.mitre.org/objects#NetworkConnectionObject-2"
+	xmlns:PortObj="http://cybox.mitre.org/objects#PortObject-2"
+	xmlns:ProcessObj="http://cybox.mitre.org/objects#ProcessObject-2"
+	xmlns:SocketAddressObj="http://cybox.mitre.org/objects#SocketAddressObject-1"
+	xmlns:WinExecutableFileObj="http://cybox.mitre.org/objects#WinExecutableFileObject-2"
+	xmlns:WinFileObj="http://cybox.mitre.org/objects#WinFileObject-2"
+	xmlns:WinHandleObj="http://cybox.mitre.org/objects#WinHandleObject-2"
+	xmlns:maecBundle="http://maec.mitre.org/XMLSchema/maec-bundle-4"
+	xmlns:maecPackage="http://maec.mitre.org/XMLSchema/maec-package-2"
+	xmlns:maecVocabs="http://maec.mitre.org/default_vocabularies-1"
+	xmlns:Cuckoosandbox="http://www.cuckoosandbox.org"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://cybox.mitre.org/common-2 http://cybox.mitre.org/XMLSchema/common/2.1/cybox_common.xsd http://cybox.mitre.org/cybox-2 http://cybox.mitre.org/XMLSchema/core/2.1/cybox_core.xsd http://cybox.mitre.org/default_vocabularies-2 http://cybox.mitre.org/XMLSchema/default_vocabularies/2.1/cybox_default_vocabularies.xsd http://cybox.mitre.org/objects#AddressObject-2 http://cybox.mitre.org/XMLSchema/objects/Address/2.1/Address_Object.xsd http://cybox.mitre.org/objects#FileObject-2 http://cybox.mitre.org/XMLSchema/objects/File/2.1/File_Object.xsd http://cybox.mitre.org/objects#NetworkConnectionObject-2 http://cybox.mitre.org/XMLSchema/objects/Network_Connection/2.1/Network_Connection_Object.xsd http://cybox.mitre.org/objects#PortObject-2 http://cybox.mitre.org/XMLSchema/objects/Port/2.1/Port_Object.xsd http://cybox.mitre.org/objects#ProcessObject-2 http://cybox.mitre.org/XMLSchema/objects/Process/2.1/Process_Object.xsd http://cybox.mitre.org/objects#SocketAddressObject-1 http://cybox.mitre.org/XMLSchema/objects/Socket_Address/1.1/Socket_Address_Object.xsd http://cybox.mitre.org/objects#WinExecutableFileObject-2 http://cybox.mitre.org/XMLSchema/objects/Win_Executable_File/2.1/Win_Executable_File_Object.xsd http://cybox.mitre.org/objects#WinFileObject-2 http://cybox.mitre.org/XMLSchema/objects/Win_File/2.1/Win_File_Object.xsd http://cybox.mitre.org/objects#WinHandleObject-2 http://cybox.mitre.org/XMLSchema/objects/Win_Handle/2.1/Win_Handle_Object.xsd http://maec.mitre.org/XMLSchema/maec-bundle-4 http://maec.mitre.org/language/version4.1/maec_bundle_schema.xsd http://maec.mitre.org/XMLSchema/maec-package-2 http://maec.mitre.org/language/version4.1/maec_package_schema.xsd http://maec.mitre.org/default_vocabularies-1 http://maec.mitre.org/language/version4.1/maec_default_vocabularies.xsd" id="Cuckoosandbox:package-82b270ed-a3db-45ef-a7b1-d7d83e95ae42" schema_version="2.1">
+    <maecPackage:Malware_Subjects>
+        <maecPackage:Malware_Subject id="Cuckoosandbox:malware_subject-37e83853-022b-4e45-9696-327d776b49f6">
+            <maecPackage:Malware_Instance_Object_Attributes id="Cuckoosandbox:object-73cdaed5-1407-4c65-b3c6-48384e5fae79">
+                <cybox:Properties xsi:type="FileObj:FileObjectType">
+                    <FileObj:File_Name>Trojan-Downloader.Win32.Swizzor.co</FileObj:File_Name>
+                    <FileObj:File_Path>/Users/ptrac3/cuckoo/storage/binaries/0df723c4e5a5287f109b1c9786e96301ab07d0f19dc88b1d8e84591c429810bb</FileObj:File_Path>
+                    <FileObj:Size_In_Bytes>185985</FileObj:Size_In_Bytes>
+                    <FileObj:File_Format>PE32 executable for MS Windows (GUI) Intel 80386 32-bit</FileObj:File_Format>
+                    <FileObj:Hashes>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type>MD5</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>ede7b41f2c7f595a360e286355477931</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type>SHA1</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>9b2ffee3363319ee1c2173a04dad6dbcc5af441f</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type>SHA256</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>0df723c4e5a5287f109b1c9786e96301ab07d0f19dc88b1d8e84591c429810bb</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type>SHA512</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>60aea235fedcdbda01d80ecdd296742eee8171860f271f76fac9a534558d5e136bfc9a67e487dc82e9d28254d3d1fbae9785793c538965c40d42f197f88bce36</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type>SSDEEP</cyboxCommon:Type>
+                            <cyboxCommon:Fuzzy_Hash_Value>3072:KDZJt0POzG1/ygjsKiCu81/n/DYn6QS5Onv/YohICrKxmSiaqwo:aXt0GzG1/ygeC/v/kntD/1Laq</cyboxCommon:Fuzzy_Hash_Value>
+                        </cyboxCommon:Hash>
+                    </FileObj:Hashes>
+                </cybox:Properties>
+            </maecPackage:Malware_Instance_Object_Attributes>
+            <maecPackage:Analyses>
+                <maecPackage:Analysis start_datetime="2015-06-03T22:59:15" complete_datetime="2015-06-03T23:01:34" method="dynamic" type="triage" id="Cuckoosandbox:analysis-9b7a84f3-983f-466c-92dc-67b76ed3f0a1">
+                    <maecPackage:Summary>Cuckoo Sandbox dynamic analysis of the malware instance object.</maecPackage:Summary>
+                    <maecPackage:Findings_Bundle_Reference bundle_idref="Cuckoosandbox:bundle-f995d68b-9a9a-4e0a-8ec7-2733770af753"/>
+                    <maecPackage:Tools>
+                        <maecPackage:Tool id="Cuckoosandbox:tool-7be72483-955b-4851-9d6b-379203fc32e0">
+                            <cyboxCommon:Name>Cuckoo Sandbox</cyboxCommon:Name>
+                            <cyboxCommon:Vendor>http://www.cuckoosandbox.org</cyboxCommon:Vendor>
+                            <cyboxCommon:Version>1.3-dev</cyboxCommon:Version>
+                        </maecPackage:Tool>
+                    </maecPackage:Tools>
+                </maecPackage:Analysis>
+                <maecPackage:Analysis start_datetime="2015-06-03T22:59:15" complete_datetime="2015-06-03T23:01:34" method="static" type="triage" id="Cuckoosandbox:analysis-41b73242-5776-4516-a3df-eeb9714c4e8a">
+                    <maecPackage:Summary>Cuckoo Sandbox static (PE) analysis of the malware instance object.</maecPackage:Summary>
+                    <maecPackage:Findings_Bundle_Reference bundle_idref="Cuckoosandbox:bundle-ed8ab87c-f462-49d2-82c2-28c21383a832"/>
+                    <maecPackage:Tools>
+                        <maecPackage:Tool id="Cuckoosandbox:tool-c1435709-76df-4e21-99f7-c912ddfd28bf">
+                            <cyboxCommon:Name>Cuckoo Sandbox Static Analysis</cyboxCommon:Name>
+                            <cyboxCommon:Vendor>http://www.cuckoosandbox.org</cyboxCommon:Vendor>
+                            <cyboxCommon:Version>1.3-dev</cyboxCommon:Version>
+                        </maecPackage:Tool>
+                    </maecPackage:Tools>
+                </maecPackage:Analysis>
+                <maecPackage:Analysis start_datetime="2015-06-03T22:59:15" complete_datetime="2015-06-03T23:01:34" method="static" type="triage" id="Cuckoosandbox:analysis-409a0052-4d03-492f-b490-b0932eb6a5ed">
+                    <maecPackage:Summary>Cuckoo Sandbox strings analysis of the malware instance object.</maecPackage:Summary>
+                    <maecPackage:Findings_Bundle_Reference bundle_idref="Cuckoosandbox:bundle-58e7c04c-c969-46e1-b2f9-683f48375ce9"/>
+                    <maecPackage:Tools>
+                        <maecPackage:Tool id="Cuckoosandbox:tool-5dacfced-470f-4ee3-b442-cb92e91c119a">
+                            <cyboxCommon:Name>Cuckoo Sandbox Strings</cyboxCommon:Name>
+                            <cyboxCommon:Vendor>http://www.cuckoosandbox.org</cyboxCommon:Vendor>
+                            <cyboxCommon:Version>1.3-dev</cyboxCommon:Version>
+                        </maecPackage:Tool>
+                    </maecPackage:Tools>
+                </maecPackage:Analysis>
+                <maecPackage:Analysis start_datetime="2015-06-03T22:59:15" complete_datetime="2015-06-03T23:01:34" method="static" type="triage" id="Cuckoosandbox:analysis-90e67a21-b1ea-43cd-a814-b9f13e0d62b1">
+                    <maecPackage:Summary>Virustotal results for the malware instance object.</maecPackage:Summary>
+                    <maecPackage:Findings_Bundle_Reference bundle_idref="Cuckoosandbox:bundle-5f40dbeb-75a7-4e06-9cc8-e3da61a9d936"/>
+                    <maecPackage:Tools>
+                        <maecPackage:Tool id="Cuckoosandbox:tool-22217754-f986-4460-9bcb-0e468333af40">
+                            <cyboxCommon:Name>VirusTotal</cyboxCommon:Name>
+                            <cyboxCommon:Vendor>https://www.virustotal.com/</cyboxCommon:Vendor>
+                        </maecPackage:Tool>
+                    </maecPackage:Tools>
+                </maecPackage:Analysis>
+            </maecPackage:Analyses>
+            <maecPackage:Findings_Bundles>
+                <maecPackage:Bundle defined_subject="false" content_type="dynamic analysis tool output" id="Cuckoosandbox:bundle-f995d68b-9a9a-4e0a-8ec7-2733770af753" schema_version="4.1">
+                    <maecBundle:Process_Tree>
+                        <maecBundle:Root_Process xsi:type="maecBundle:ProcessTreeNodeType" id="Cuckoosandbox:process_tree_node-b14fc3d9-b6a9-4d13-ae31-0bb5ba4e1496">
+                            <ProcessObj:PID>2216</ProcessObj:PID>
+                            <ProcessObj:Name>Trojan-Downloader.Win32.Swizzor.co</ProcessObj:Name>
+                            <maecBundle:Initiated_Actions>
+                                <maecBundle:Action_Reference action_id="Cuckoosandbox:action-980190c2-e65c-4165-87ad-4624cbb4196b"/>
+                                <maecBundle:Action_Reference action_id="Cuckoosandbox:action-04cb65fe-a8cf-4bd8-95f0-039901d97ca4"/>
+                                <maecBundle:Action_Reference action_id="Cuckoosandbox:action-dbdc624c-4a67-430b-9912-c89ebcf53fd1"/>
+                                <maecBundle:Action_Reference action_id="Cuckoosandbox:action-33272ba6-38f9-47df-ac8e-35c22e99524e"/>
+                            </maecBundle:Initiated_Actions>
+                        </maecBundle:Root_Process>
+                    </maecBundle:Process_Tree>
+                    <maecBundle:Collections>
+                        <maecBundle:Action_Collections>
+                            <maecBundle:Action_Collection name="Filesystem Actions" id="Cuckoosandbox:action-52ec31ba-b5e2-4795-9226-d08101fe0587">
+                                <maecBundle:Action_List>
+                                    <maecBundle:Action timestamp="2015-03-06T22:02:52.183" action_status="Success" ordinal_position="1" id="Cuckoosandbox:action-980190c2-e65c-4165-87ad-4624cbb4196b"/>
+                                </maecBundle:Action_List>
+                            </maecBundle:Action_Collection>
+                            <maecBundle:Action_Collection name="Process Actions" id="Cuckoosandbox:action-6b0fcb29-dbde-4462-9c83-c4ed1ac8706d">
+                                <maecBundle:Action_List>
+                                    <maecBundle:Action timestamp="2015-03-06T22:02:52.193" action_status="Success" ordinal_position="2" id="Cuckoosandbox:action-04cb65fe-a8cf-4bd8-95f0-039901d97ca4">
+                                        <cybox:Name>create section</cybox:Name>
+                                        <cybox:Associated_Objects>
+                                            <cybox:Associated_Object idref="Cuckoosandbox:object-d51c04de-9448-482f-b9df-25a06c1224c6">
+                                                <cybox:Association_Type xsi:type="maecVocabs:ActionObjectAssociationTypeVocab-1.0">output</cybox:Association_Type>
+                                            </cybox:Associated_Object>
+                                            <cybox:Associated_Object id="Cuckoosandbox:object-304a2a49-3b1b-43a8-a71c-e19466aadaaa">
+                                                <cybox:Properties xsi:type="WinHandleObj:WindowsHandleObjectType">
+                                                    <WinHandleObj:ID>0</WinHandleObj:ID>
+                                                    <WinHandleObj:Type>File</WinHandleObj:Type>
+                                                </cybox:Properties>
+                                                <cybox:Association_Type xsi:type="maecVocabs:ActionObjectAssociationTypeVocab-1.0">input</cybox:Association_Type>
+                                            </cybox:Associated_Object>
+                                        </cybox:Associated_Objects>
+                                    </maecBundle:Action>
+                                    <maecBundle:Action timestamp="2015-03-06T22:02:52.193" action_status="Success" ordinal_position="3" id="Cuckoosandbox:action-dbdc624c-4a67-430b-9912-c89ebcf53fd1">
+                                        <cybox:Name>map view of section</cybox:Name>
+                                        <cybox:Action_Arguments>
+                                            <cybox:Action_Argument>
+                                                <cybox:Argument_Name>Section Offset</cybox:Argument_Name>
+                                                <cybox:Argument_Value>0x013dfa1c</cybox:Argument_Value>
+                                            </cybox:Action_Argument>
+                                            <cybox:Action_Argument>
+                                                <cybox:Argument_Name xsi:type="cyboxVocabs:ActionArgumentNameVocab-1.0">Base Address</cybox:Argument_Name>
+                                                <cybox:Argument_Value>0x000e0000</cybox:Argument_Value>
+                                            </cybox:Action_Argument>
+                                        </cybox:Action_Arguments>
+                                        <cybox:Associated_Objects>
+                                            <cybox:Associated_Object idref="Cuckoosandbox:object-d51c04de-9448-482f-b9df-25a06c1224c6">
+                                                <cybox:Association_Type xsi:type="maecVocabs:ActionObjectAssociationTypeVocab-1.0">input</cybox:Association_Type>
+                                            </cybox:Associated_Object>
+                                            <cybox:Associated_Object idref="Cuckoosandbox:object-97a9625a-db4f-4109-ab3a-a2de73cef105">
+                                                <cybox:Association_Type xsi:type="maecVocabs:ActionObjectAssociationTypeVocab-1.0">input</cybox:Association_Type>
+                                            </cybox:Associated_Object>
+                                        </cybox:Associated_Objects>
+                                    </maecBundle:Action>
+                                    <maecBundle:Action timestamp="2015-03-06T22:02:52.403" action_status="Success" ordinal_position="4" id="Cuckoosandbox:action-33272ba6-38f9-47df-ac8e-35c22e99524e">
+                                        <cybox:Name xsi:type="maecVocabs:ProcessMemoryActionNameVocab-1.0">free process virtual memory</cybox:Name>
+                                        <cybox:Associated_Objects>
+                                            <cybox:Associated_Object idref="Cuckoosandbox:object-97a9625a-db4f-4109-ab3a-a2de73cef105">
+                                                <cybox:Association_Type xsi:type="maecVocabs:ActionObjectAssociationTypeVocab-1.0">input</cybox:Association_Type>
+                                            </cybox:Associated_Object>
+                                        </cybox:Associated_Objects>
+                                    </maecBundle:Action>
+                                </maecBundle:Action_List>
+                            </maecBundle:Action_Collection>
+                            <maecBundle:Action_Collection name="Network Actions" id="Cuckoosandbox:action_collection-1b4ad18f-edaa-432d-b676-904a8ce6824b">
+                                <maecBundle:Action_List>
+                                    <maecBundle:Action id="Cuckoosandbox:action-bc7fc62d-ffa0-4ac3-a960-60580cc13a34">
+                                        <cybox:Name xsi:type="maecVocabs:NetworkActionNameVocab-1.0">connect to socket address</cybox:Name>
+                                        <cybox:Associated_Objects>
+                                            <cybox:Associated_Object id="Cuckoosandbox:object-87f64dab-d1c3-44c6-bda7-55c316c78e6c">
+                                                <cybox:Properties xsi:type="NetworkConnectionObj:NetworkConnectionObjectType">
+                                                    <NetworkConnectionObj:Layer4_Protocol>UDP</NetworkConnectionObj:Layer4_Protocol>
+                                                    <NetworkConnectionObj:Source_Socket_Address xsi:type="SocketAddressObj:SocketAddressObjectType">
+                                                        <SocketAddressObj:IP_Address xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                                                            <AddressObj:Address_Value>192.168.56.104</AddressObj:Address_Value>
+                                                        </SocketAddressObj:IP_Address>
+                                                        <SocketAddressObj:Port xsi:type="PortObj:PortObjectType">
+                                                            <PortObj:Port_Value>137</PortObj:Port_Value>
+                                                        </SocketAddressObj:Port>
+                                                    </NetworkConnectionObj:Source_Socket_Address>
+                                                    <NetworkConnectionObj:Destination_Socket_Address xsi:type="SocketAddressObj:SocketAddressObjectType">
+                                                        <SocketAddressObj:IP_Address xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                                                            <AddressObj:Address_Value>192.168.56.255</AddressObj:Address_Value>
+                                                        </SocketAddressObj:IP_Address>
+                                                        <SocketAddressObj:Port xsi:type="PortObj:PortObjectType">
+                                                            <PortObj:Port_Value>137</PortObj:Port_Value>
+                                                        </SocketAddressObj:Port>
+                                                    </NetworkConnectionObj:Destination_Socket_Address>
+                                                </cybox:Properties>
+                                            </cybox:Associated_Object>
+                                        </cybox:Associated_Objects>
+                                    </maecBundle:Action>
+                                    <maecBundle:Action id="Cuckoosandbox:action-4225bb6b-fd4c-41ab-9e33-e38bc4b58452">
+                                        <cybox:Name xsi:type="maecVocabs:NetworkActionNameVocab-1.0">connect to socket address</cybox:Name>
+                                        <cybox:Associated_Objects>
+                                            <cybox:Associated_Object id="Cuckoosandbox:object-4fa50b59-0de1-488d-b351-af989353ca28">
+                                                <cybox:Properties xsi:type="NetworkConnectionObj:NetworkConnectionObjectType">
+                                                    <NetworkConnectionObj:Layer4_Protocol>UDP</NetworkConnectionObj:Layer4_Protocol>
+                                                    <NetworkConnectionObj:Source_Socket_Address xsi:type="SocketAddressObj:SocketAddressObjectType">
+                                                        <SocketAddressObj:IP_Address xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                                                            <AddressObj:Address_Value>192.168.56.104</AddressObj:Address_Value>
+                                                        </SocketAddressObj:IP_Address>
+                                                        <SocketAddressObj:Port xsi:type="PortObj:PortObjectType">
+                                                            <PortObj:Port_Value>51333</PortObj:Port_Value>
+                                                        </SocketAddressObj:Port>
+                                                    </NetworkConnectionObj:Source_Socket_Address>
+                                                    <NetworkConnectionObj:Destination_Socket_Address xsi:type="SocketAddressObj:SocketAddressObjectType">
+                                                        <SocketAddressObj:IP_Address xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                                                            <AddressObj:Address_Value>224.0.0.252</AddressObj:Address_Value>
+                                                        </SocketAddressObj:IP_Address>
+                                                        <SocketAddressObj:Port xsi:type="PortObj:PortObjectType">
+                                                            <PortObj:Port_Value>5355</PortObj:Port_Value>
+                                                        </SocketAddressObj:Port>
+                                                    </NetworkConnectionObj:Destination_Socket_Address>
+                                                </cybox:Properties>
+                                            </cybox:Associated_Object>
+                                        </cybox:Associated_Objects>
+                                    </maecBundle:Action>
+                                    <maecBundle:Action id="Cuckoosandbox:action-b87be4cc-2269-4db3-817e-8a6b47f48e43">
+                                        <cybox:Name xsi:type="maecVocabs:NetworkActionNameVocab-1.0">connect to socket address</cybox:Name>
+                                        <cybox:Associated_Objects>
+                                            <cybox:Associated_Object id="Cuckoosandbox:object-85cb2b30-dc09-443c-adb3-809f9b954a86">
+                                                <cybox:Properties xsi:type="NetworkConnectionObj:NetworkConnectionObjectType">
+                                                    <NetworkConnectionObj:Layer4_Protocol>UDP</NetworkConnectionObj:Layer4_Protocol>
+                                                    <NetworkConnectionObj:Source_Socket_Address xsi:type="SocketAddressObj:SocketAddressObjectType">
+                                                        <SocketAddressObj:IP_Address xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                                                            <AddressObj:Address_Value>192.168.56.104</AddressObj:Address_Value>
+                                                        </SocketAddressObj:IP_Address>
+                                                        <SocketAddressObj:Port xsi:type="PortObj:PortObjectType">
+                                                            <PortObj:Port_Value>52687</PortObj:Port_Value>
+                                                        </SocketAddressObj:Port>
+                                                    </NetworkConnectionObj:Source_Socket_Address>
+                                                    <NetworkConnectionObj:Destination_Socket_Address xsi:type="SocketAddressObj:SocketAddressObjectType">
+                                                        <SocketAddressObj:IP_Address xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                                                            <AddressObj:Address_Value>224.0.0.252</AddressObj:Address_Value>
+                                                        </SocketAddressObj:IP_Address>
+                                                        <SocketAddressObj:Port xsi:type="PortObj:PortObjectType">
+                                                            <PortObj:Port_Value>5355</PortObj:Port_Value>
+                                                        </SocketAddressObj:Port>
+                                                    </NetworkConnectionObj:Destination_Socket_Address>
+                                                </cybox:Properties>
+                                            </cybox:Associated_Object>
+                                        </cybox:Associated_Objects>
+                                    </maecBundle:Action>
+                                    <maecBundle:Action id="Cuckoosandbox:action-a76bff2a-0972-4811-84c4-47b29e38ebcd">
+                                        <cybox:Name xsi:type="maecVocabs:NetworkActionNameVocab-1.0">connect to socket address</cybox:Name>
+                                        <cybox:Associated_Objects>
+                                            <cybox:Associated_Object id="Cuckoosandbox:object-102381f7-322d-4ba9-9a06-29a72fca396e">
+                                                <cybox:Properties xsi:type="NetworkConnectionObj:NetworkConnectionObjectType">
+                                                    <NetworkConnectionObj:Layer4_Protocol>UDP</NetworkConnectionObj:Layer4_Protocol>
+                                                    <NetworkConnectionObj:Source_Socket_Address xsi:type="SocketAddressObj:SocketAddressObjectType">
+                                                        <SocketAddressObj:IP_Address xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                                                            <AddressObj:Address_Value>192.168.56.104</AddressObj:Address_Value>
+                                                        </SocketAddressObj:IP_Address>
+                                                        <SocketAddressObj:Port xsi:type="PortObj:PortObjectType">
+                                                            <PortObj:Port_Value>55177</PortObj:Port_Value>
+                                                        </SocketAddressObj:Port>
+                                                    </NetworkConnectionObj:Source_Socket_Address>
+                                                    <NetworkConnectionObj:Destination_Socket_Address xsi:type="SocketAddressObj:SocketAddressObjectType">
+                                                        <SocketAddressObj:IP_Address xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                                                            <AddressObj:Address_Value>224.0.0.252</AddressObj:Address_Value>
+                                                        </SocketAddressObj:IP_Address>
+                                                        <SocketAddressObj:Port xsi:type="PortObj:PortObjectType">
+                                                            <PortObj:Port_Value>5355</PortObj:Port_Value>
+                                                        </SocketAddressObj:Port>
+                                                    </NetworkConnectionObj:Destination_Socket_Address>
+                                                </cybox:Properties>
+                                            </cybox:Associated_Object>
+                                        </cybox:Associated_Objects>
+                                    </maecBundle:Action>
+                                    <maecBundle:Action id="Cuckoosandbox:action-d606c5f1-7684-418b-96b5-345db669397c">
+                                        <cybox:Name xsi:type="maecVocabs:NetworkActionNameVocab-1.0">connect to socket address</cybox:Name>
+                                        <cybox:Associated_Objects>
+                                            <cybox:Associated_Object id="Cuckoosandbox:object-da080c50-9ce8-4104-a401-249d6e70e5a4">
+                                                <cybox:Properties xsi:type="NetworkConnectionObj:NetworkConnectionObjectType">
+                                                    <NetworkConnectionObj:Layer4_Protocol>UDP</NetworkConnectionObj:Layer4_Protocol>
+                                                    <NetworkConnectionObj:Source_Socket_Address xsi:type="SocketAddressObj:SocketAddressObjectType">
+                                                        <SocketAddressObj:IP_Address xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                                                            <AddressObj:Address_Value>192.168.56.104</AddressObj:Address_Value>
+                                                        </SocketAddressObj:IP_Address>
+                                                        <SocketAddressObj:Port xsi:type="PortObj:PortObjectType">
+                                                            <PortObj:Port_Value>59031</PortObj:Port_Value>
+                                                        </SocketAddressObj:Port>
+                                                    </NetworkConnectionObj:Source_Socket_Address>
+                                                    <NetworkConnectionObj:Destination_Socket_Address xsi:type="SocketAddressObj:SocketAddressObjectType">
+                                                        <SocketAddressObj:IP_Address xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                                                            <AddressObj:Address_Value>224.0.0.252</AddressObj:Address_Value>
+                                                        </SocketAddressObj:IP_Address>
+                                                        <SocketAddressObj:Port xsi:type="PortObj:PortObjectType">
+                                                            <PortObj:Port_Value>5355</PortObj:Port_Value>
+                                                        </SocketAddressObj:Port>
+                                                    </NetworkConnectionObj:Destination_Socket_Address>
+                                                </cybox:Properties>
+                                            </cybox:Associated_Object>
+                                        </cybox:Associated_Objects>
+                                    </maecBundle:Action>
+                                    <maecBundle:Action id="Cuckoosandbox:action-c4275ec0-4c08-4be0-a336-957fca7ea9e5">
+                                        <cybox:Name xsi:type="maecVocabs:NetworkActionNameVocab-1.0">connect to socket address</cybox:Name>
+                                        <cybox:Associated_Objects>
+                                            <cybox:Associated_Object id="Cuckoosandbox:object-63f86a94-2bb0-4b48-980f-908b19f369f8">
+                                                <cybox:Properties xsi:type="NetworkConnectionObj:NetworkConnectionObjectType">
+                                                    <NetworkConnectionObj:Layer4_Protocol>UDP</NetworkConnectionObj:Layer4_Protocol>
+                                                    <NetworkConnectionObj:Source_Socket_Address xsi:type="SocketAddressObj:SocketAddressObjectType">
+                                                        <SocketAddressObj:IP_Address xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                                                            <AddressObj:Address_Value>192.168.56.104</AddressObj:Address_Value>
+                                                        </SocketAddressObj:IP_Address>
+                                                        <SocketAddressObj:Port xsi:type="PortObj:PortObjectType">
+                                                            <PortObj:Port_Value>63336</PortObj:Port_Value>
+                                                        </SocketAddressObj:Port>
+                                                    </NetworkConnectionObj:Source_Socket_Address>
+                                                    <NetworkConnectionObj:Destination_Socket_Address xsi:type="SocketAddressObj:SocketAddressObjectType">
+                                                        <SocketAddressObj:IP_Address xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                                                            <AddressObj:Address_Value>224.0.0.252</AddressObj:Address_Value>
+                                                        </SocketAddressObj:IP_Address>
+                                                        <SocketAddressObj:Port xsi:type="PortObj:PortObjectType">
+                                                            <PortObj:Port_Value>5355</PortObj:Port_Value>
+                                                        </SocketAddressObj:Port>
+                                                    </NetworkConnectionObj:Destination_Socket_Address>
+                                                </cybox:Properties>
+                                            </cybox:Associated_Object>
+                                        </cybox:Associated_Objects>
+                                    </maecBundle:Action>
+                                    <maecBundle:Action id="Cuckoosandbox:action-09e69f48-18f4-4aa2-920f-f33b88bacf90">
+                                        <cybox:Name xsi:type="maecVocabs:NetworkActionNameVocab-1.0">connect to socket address</cybox:Name>
+                                        <cybox:Associated_Objects>
+                                            <cybox:Associated_Object id="Cuckoosandbox:object-d2a7344a-d6c2-4a17-bd85-b5209eaafbb0">
+                                                <cybox:Properties xsi:type="NetworkConnectionObj:NetworkConnectionObjectType">
+                                                    <NetworkConnectionObj:Layer4_Protocol>UDP</NetworkConnectionObj:Layer4_Protocol>
+                                                    <NetworkConnectionObj:Source_Socket_Address xsi:type="SocketAddressObj:SocketAddressObjectType">
+                                                        <SocketAddressObj:IP_Address xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                                                            <AddressObj:Address_Value>192.168.56.104</AddressObj:Address_Value>
+                                                        </SocketAddressObj:IP_Address>
+                                                        <SocketAddressObj:Port xsi:type="PortObj:PortObjectType">
+                                                            <PortObj:Port_Value>1900</PortObj:Port_Value>
+                                                        </SocketAddressObj:Port>
+                                                    </NetworkConnectionObj:Source_Socket_Address>
+                                                    <NetworkConnectionObj:Destination_Socket_Address xsi:type="SocketAddressObj:SocketAddressObjectType">
+                                                        <SocketAddressObj:IP_Address xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                                                            <AddressObj:Address_Value>239.255.255.250</AddressObj:Address_Value>
+                                                        </SocketAddressObj:IP_Address>
+                                                        <SocketAddressObj:Port xsi:type="PortObj:PortObjectType">
+                                                            <PortObj:Port_Value>1900</PortObj:Port_Value>
+                                                        </SocketAddressObj:Port>
+                                                    </NetworkConnectionObj:Destination_Socket_Address>
+                                                </cybox:Properties>
+                                            </cybox:Associated_Object>
+                                        </cybox:Associated_Objects>
+                                    </maecBundle:Action>
+                                    <maecBundle:Action id="Cuckoosandbox:action-1d692884-bc9d-4943-bbf5-b9737476e8f0">
+                                        <cybox:Name xsi:type="maecVocabs:NetworkActionNameVocab-1.0">connect to socket address</cybox:Name>
+                                        <cybox:Associated_Objects>
+                                            <cybox:Associated_Object id="Cuckoosandbox:object-3900d372-c94b-422b-bd62-fcb1a854ed5d">
+                                                <cybox:Properties xsi:type="NetworkConnectionObj:NetworkConnectionObjectType">
+                                                    <NetworkConnectionObj:Layer4_Protocol>UDP</NetworkConnectionObj:Layer4_Protocol>
+                                                    <NetworkConnectionObj:Source_Socket_Address xsi:type="SocketAddressObj:SocketAddressObjectType">
+                                                        <SocketAddressObj:IP_Address xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                                                            <AddressObj:Address_Value>192.168.56.104</AddressObj:Address_Value>
+                                                        </SocketAddressObj:IP_Address>
+                                                        <SocketAddressObj:Port xsi:type="PortObj:PortObjectType">
+                                                            <PortObj:Port_Value>49599</PortObj:Port_Value>
+                                                        </SocketAddressObj:Port>
+                                                    </NetworkConnectionObj:Source_Socket_Address>
+                                                    <NetworkConnectionObj:Destination_Socket_Address xsi:type="SocketAddressObj:SocketAddressObjectType">
+                                                        <SocketAddressObj:IP_Address xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                                                            <AddressObj:Address_Value>239.255.255.250</AddressObj:Address_Value>
+                                                        </SocketAddressObj:IP_Address>
+                                                        <SocketAddressObj:Port xsi:type="PortObj:PortObjectType">
+                                                            <PortObj:Port_Value>3702</PortObj:Port_Value>
+                                                        </SocketAddressObj:Port>
+                                                    </NetworkConnectionObj:Destination_Socket_Address>
+                                                </cybox:Properties>
+                                            </cybox:Associated_Object>
+                                        </cybox:Associated_Objects>
+                                    </maecBundle:Action>
+                                    <maecBundle:Action id="Cuckoosandbox:action-1d96f5d1-3896-434e-b0d9-eeb83aec6800">
+                                        <cybox:Name xsi:type="maecVocabs:NetworkActionNameVocab-1.0">connect to socket address</cybox:Name>
+                                        <cybox:Associated_Objects>
+                                            <cybox:Associated_Object id="Cuckoosandbox:object-c9146cfe-967e-4ebc-8202-bfb60e440e25">
+                                                <cybox:Properties xsi:type="NetworkConnectionObj:NetworkConnectionObjectType">
+                                                    <NetworkConnectionObj:Layer4_Protocol>UDP</NetworkConnectionObj:Layer4_Protocol>
+                                                    <NetworkConnectionObj:Source_Socket_Address xsi:type="SocketAddressObj:SocketAddressObjectType">
+                                                        <SocketAddressObj:IP_Address xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                                                            <AddressObj:Address_Value>192.168.56.104</AddressObj:Address_Value>
+                                                        </SocketAddressObj:IP_Address>
+                                                        <SocketAddressObj:Port xsi:type="PortObj:PortObjectType">
+                                                            <PortObj:Port_Value>51151</PortObj:Port_Value>
+                                                        </SocketAddressObj:Port>
+                                                    </NetworkConnectionObj:Source_Socket_Address>
+                                                    <NetworkConnectionObj:Destination_Socket_Address xsi:type="SocketAddressObj:SocketAddressObjectType">
+                                                        <SocketAddressObj:IP_Address xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                                                            <AddressObj:Address_Value>239.255.255.250</AddressObj:Address_Value>
+                                                        </SocketAddressObj:IP_Address>
+                                                        <SocketAddressObj:Port xsi:type="PortObj:PortObjectType">
+                                                            <PortObj:Port_Value>3702</PortObj:Port_Value>
+                                                        </SocketAddressObj:Port>
+                                                    </NetworkConnectionObj:Destination_Socket_Address>
+                                                </cybox:Properties>
+                                            </cybox:Associated_Object>
+                                        </cybox:Associated_Objects>
+                                    </maecBundle:Action>
+                                    <maecBundle:Action id="Cuckoosandbox:action-26a05b01-b3a3-4f08-8cea-54f979a07e98">
+                                        <cybox:Name xsi:type="maecVocabs:NetworkActionNameVocab-1.0">connect to socket address</cybox:Name>
+                                        <cybox:Associated_Objects>
+                                            <cybox:Associated_Object id="Cuckoosandbox:object-eb1d0f14-3cc0-4983-9db9-ff7ef4d3bf70">
+                                                <cybox:Properties xsi:type="NetworkConnectionObj:NetworkConnectionObjectType">
+                                                    <NetworkConnectionObj:Layer4_Protocol>UDP</NetworkConnectionObj:Layer4_Protocol>
+                                                    <NetworkConnectionObj:Source_Socket_Address xsi:type="SocketAddressObj:SocketAddressObjectType">
+                                                        <SocketAddressObj:IP_Address xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                                                            <AddressObj:Address_Value>192.168.56.104</AddressObj:Address_Value>
+                                                        </SocketAddressObj:IP_Address>
+                                                        <SocketAddressObj:Port xsi:type="PortObj:PortObjectType">
+                                                            <PortObj:Port_Value>51336</PortObj:Port_Value>
+                                                        </SocketAddressObj:Port>
+                                                    </NetworkConnectionObj:Source_Socket_Address>
+                                                    <NetworkConnectionObj:Destination_Socket_Address xsi:type="SocketAddressObj:SocketAddressObjectType">
+                                                        <SocketAddressObj:IP_Address xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                                                            <AddressObj:Address_Value>239.255.255.250</AddressObj:Address_Value>
+                                                        </SocketAddressObj:IP_Address>
+                                                        <SocketAddressObj:Port xsi:type="PortObj:PortObjectType">
+                                                            <PortObj:Port_Value>1900</PortObj:Port_Value>
+                                                        </SocketAddressObj:Port>
+                                                    </NetworkConnectionObj:Destination_Socket_Address>
+                                                </cybox:Properties>
+                                            </cybox:Associated_Object>
+                                        </cybox:Associated_Objects>
+                                    </maecBundle:Action>
+                                    <maecBundle:Action id="Cuckoosandbox:action-7ded1a9d-ffe5-4fd3-b64a-2e63f341246b">
+                                        <cybox:Name xsi:type="maecVocabs:NetworkActionNameVocab-1.0">connect to socket address</cybox:Name>
+                                        <cybox:Associated_Objects>
+                                            <cybox:Associated_Object id="Cuckoosandbox:object-b2fb157f-b49f-4ba2-9c2d-5527114220bd">
+                                                <cybox:Properties xsi:type="NetworkConnectionObj:NetworkConnectionObjectType">
+                                                    <NetworkConnectionObj:Layer4_Protocol>UDP</NetworkConnectionObj:Layer4_Protocol>
+                                                    <NetworkConnectionObj:Source_Socket_Address xsi:type="SocketAddressObj:SocketAddressObjectType">
+                                                        <SocketAddressObj:IP_Address xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                                                            <AddressObj:Address_Value>192.168.56.104</AddressObj:Address_Value>
+                                                        </SocketAddressObj:IP_Address>
+                                                        <SocketAddressObj:Port xsi:type="PortObj:PortObjectType">
+                                                            <PortObj:Port_Value>53948</PortObj:Port_Value>
+                                                        </SocketAddressObj:Port>
+                                                    </NetworkConnectionObj:Source_Socket_Address>
+                                                    <NetworkConnectionObj:Destination_Socket_Address xsi:type="SocketAddressObj:SocketAddressObjectType">
+                                                        <SocketAddressObj:IP_Address xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                                                            <AddressObj:Address_Value>239.255.255.250</AddressObj:Address_Value>
+                                                        </SocketAddressObj:IP_Address>
+                                                        <SocketAddressObj:Port xsi:type="PortObj:PortObjectType">
+                                                            <PortObj:Port_Value>3702</PortObj:Port_Value>
+                                                        </SocketAddressObj:Port>
+                                                    </NetworkConnectionObj:Destination_Socket_Address>
+                                                </cybox:Properties>
+                                            </cybox:Associated_Object>
+                                        </cybox:Associated_Objects>
+                                    </maecBundle:Action>
+                                    <maecBundle:Action id="Cuckoosandbox:action-0ce08c80-b209-4986-82d4-fba5156494be">
+                                        <cybox:Name xsi:type="maecVocabs:NetworkActionNameVocab-1.0">connect to socket address</cybox:Name>
+                                        <cybox:Associated_Objects>
+                                            <cybox:Associated_Object id="Cuckoosandbox:object-708263a6-52d6-4c88-a528-3f88c16d0495">
+                                                <cybox:Properties xsi:type="NetworkConnectionObj:NetworkConnectionObjectType">
+                                                    <NetworkConnectionObj:Layer4_Protocol>UDP</NetworkConnectionObj:Layer4_Protocol>
+                                                    <NetworkConnectionObj:Source_Socket_Address xsi:type="SocketAddressObj:SocketAddressObjectType">
+                                                        <SocketAddressObj:IP_Address xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                                                            <AddressObj:Address_Value>192.168.56.104</AddressObj:Address_Value>
+                                                        </SocketAddressObj:IP_Address>
+                                                        <SocketAddressObj:Port xsi:type="PortObj:PortObjectType">
+                                                            <PortObj:Port_Value>55911</PortObj:Port_Value>
+                                                        </SocketAddressObj:Port>
+                                                    </NetworkConnectionObj:Source_Socket_Address>
+                                                    <NetworkConnectionObj:Destination_Socket_Address xsi:type="SocketAddressObj:SocketAddressObjectType">
+                                                        <SocketAddressObj:IP_Address xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                                                            <AddressObj:Address_Value>239.255.255.250</AddressObj:Address_Value>
+                                                        </SocketAddressObj:IP_Address>
+                                                        <SocketAddressObj:Port xsi:type="PortObj:PortObjectType">
+                                                            <PortObj:Port_Value>3702</PortObj:Port_Value>
+                                                        </SocketAddressObj:Port>
+                                                    </NetworkConnectionObj:Destination_Socket_Address>
+                                                </cybox:Properties>
+                                            </cybox:Associated_Object>
+                                        </cybox:Associated_Objects>
+                                    </maecBundle:Action>
+                                    <maecBundle:Action id="Cuckoosandbox:action-d8c8793c-8c0e-479d-8cf5-1f758c3f0701">
+                                        <cybox:Name xsi:type="maecVocabs:NetworkActionNameVocab-1.0">connect to socket address</cybox:Name>
+                                        <cybox:Associated_Objects>
+                                            <cybox:Associated_Object id="Cuckoosandbox:object-5db88a7f-4d2c-4624-8b68-6aecb1f525a4">
+                                                <cybox:Properties xsi:type="NetworkConnectionObj:NetworkConnectionObjectType">
+                                                    <NetworkConnectionObj:Layer4_Protocol>UDP</NetworkConnectionObj:Layer4_Protocol>
+                                                    <NetworkConnectionObj:Source_Socket_Address xsi:type="SocketAddressObj:SocketAddressObjectType">
+                                                        <SocketAddressObj:IP_Address xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                                                            <AddressObj:Address_Value>192.168.56.104</AddressObj:Address_Value>
+                                                        </SocketAddressObj:IP_Address>
+                                                        <SocketAddressObj:Port xsi:type="PortObj:PortObjectType">
+                                                            <PortObj:Port_Value>49598</PortObj:Port_Value>
+                                                        </SocketAddressObj:Port>
+                                                    </NetworkConnectionObj:Source_Socket_Address>
+                                                    <NetworkConnectionObj:Destination_Socket_Address xsi:type="SocketAddressObj:SocketAddressObjectType">
+                                                        <SocketAddressObj:IP_Address xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                                                            <AddressObj:Address_Value>8.8.8.8</AddressObj:Address_Value>
+                                                        </SocketAddressObj:IP_Address>
+                                                        <SocketAddressObj:Port xsi:type="PortObj:PortObjectType">
+                                                            <PortObj:Port_Value>53</PortObj:Port_Value>
+                                                        </SocketAddressObj:Port>
+                                                    </NetworkConnectionObj:Destination_Socket_Address>
+                                                </cybox:Properties>
+                                            </cybox:Associated_Object>
+                                        </cybox:Associated_Objects>
+                                    </maecBundle:Action>
+                                    <maecBundle:Action id="Cuckoosandbox:action-2fd70931-e8c6-4cb3-a7a5-73093ea5b752">
+                                        <cybox:Name xsi:type="maecVocabs:NetworkActionNameVocab-1.0">connect to socket address</cybox:Name>
+                                        <cybox:Associated_Objects>
+                                            <cybox:Associated_Object id="Cuckoosandbox:object-9ea03b73-3369-48f5-8198-5d5b10a269f6">
+                                                <cybox:Properties xsi:type="NetworkConnectionObj:NetworkConnectionObjectType">
+                                                    <NetworkConnectionObj:Layer4_Protocol>UDP</NetworkConnectionObj:Layer4_Protocol>
+                                                    <NetworkConnectionObj:Source_Socket_Address xsi:type="SocketAddressObj:SocketAddressObjectType">
+                                                        <SocketAddressObj:IP_Address xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                                                            <AddressObj:Address_Value>192.168.56.104</AddressObj:Address_Value>
+                                                        </SocketAddressObj:IP_Address>
+                                                        <SocketAddressObj:Port xsi:type="PortObj:PortObjectType">
+                                                            <PortObj:Port_Value>51150</PortObj:Port_Value>
+                                                        </SocketAddressObj:Port>
+                                                    </NetworkConnectionObj:Source_Socket_Address>
+                                                    <NetworkConnectionObj:Destination_Socket_Address xsi:type="SocketAddressObj:SocketAddressObjectType">
+                                                        <SocketAddressObj:IP_Address xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                                                            <AddressObj:Address_Value>8.8.8.8</AddressObj:Address_Value>
+                                                        </SocketAddressObj:IP_Address>
+                                                        <SocketAddressObj:Port xsi:type="PortObj:PortObjectType">
+                                                            <PortObj:Port_Value>53</PortObj:Port_Value>
+                                                        </SocketAddressObj:Port>
+                                                    </NetworkConnectionObj:Destination_Socket_Address>
+                                                </cybox:Properties>
+                                            </cybox:Associated_Object>
+                                        </cybox:Associated_Objects>
+                                    </maecBundle:Action>
+                                    <maecBundle:Action id="Cuckoosandbox:action-09a6ebd6-6fd6-41f6-a0fe-beed7ff301c1">
+                                        <cybox:Name xsi:type="maecVocabs:NetworkActionNameVocab-1.0">connect to socket address</cybox:Name>
+                                        <cybox:Associated_Objects>
+                                            <cybox:Associated_Object id="Cuckoosandbox:object-a6893884-1708-48a9-9e9f-64bbf1a2db1f">
+                                                <cybox:Properties xsi:type="NetworkConnectionObj:NetworkConnectionObjectType">
+                                                    <NetworkConnectionObj:Layer4_Protocol>UDP</NetworkConnectionObj:Layer4_Protocol>
+                                                    <NetworkConnectionObj:Source_Socket_Address xsi:type="SocketAddressObj:SocketAddressObjectType">
+                                                        <SocketAddressObj:IP_Address xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                                                            <AddressObj:Address_Value>192.168.56.104</AddressObj:Address_Value>
+                                                        </SocketAddressObj:IP_Address>
+                                                        <SocketAddressObj:Port xsi:type="PortObj:PortObjectType">
+                                                            <PortObj:Port_Value>52560</PortObj:Port_Value>
+                                                        </SocketAddressObj:Port>
+                                                    </NetworkConnectionObj:Source_Socket_Address>
+                                                    <NetworkConnectionObj:Destination_Socket_Address xsi:type="SocketAddressObj:SocketAddressObjectType">
+                                                        <SocketAddressObj:IP_Address xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                                                            <AddressObj:Address_Value>8.8.8.8</AddressObj:Address_Value>
+                                                        </SocketAddressObj:IP_Address>
+                                                        <SocketAddressObj:Port xsi:type="PortObj:PortObjectType">
+                                                            <PortObj:Port_Value>53</PortObj:Port_Value>
+                                                        </SocketAddressObj:Port>
+                                                    </NetworkConnectionObj:Destination_Socket_Address>
+                                                </cybox:Properties>
+                                            </cybox:Associated_Object>
+                                        </cybox:Associated_Objects>
+                                    </maecBundle:Action>
+                                    <maecBundle:Action id="Cuckoosandbox:action-38841eb2-1d09-46b4-b67e-f4c590fd5833">
+                                        <cybox:Name xsi:type="maecVocabs:NetworkActionNameVocab-1.0">connect to socket address</cybox:Name>
+                                        <cybox:Associated_Objects>
+                                            <cybox:Associated_Object id="Cuckoosandbox:object-939a1ebf-1723-41eb-9bf0-069e8fe94759">
+                                                <cybox:Properties xsi:type="NetworkConnectionObj:NetworkConnectionObjectType">
+                                                    <NetworkConnectionObj:Layer4_Protocol>UDP</NetworkConnectionObj:Layer4_Protocol>
+                                                    <NetworkConnectionObj:Source_Socket_Address xsi:type="SocketAddressObj:SocketAddressObjectType">
+                                                        <SocketAddressObj:IP_Address xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                                                            <AddressObj:Address_Value>192.168.56.104</AddressObj:Address_Value>
+                                                        </SocketAddressObj:IP_Address>
+                                                        <SocketAddressObj:Port xsi:type="PortObj:PortObjectType">
+                                                            <PortObj:Port_Value>53947</PortObj:Port_Value>
+                                                        </SocketAddressObj:Port>
+                                                    </NetworkConnectionObj:Source_Socket_Address>
+                                                    <NetworkConnectionObj:Destination_Socket_Address xsi:type="SocketAddressObj:SocketAddressObjectType">
+                                                        <SocketAddressObj:IP_Address xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                                                            <AddressObj:Address_Value>8.8.8.8</AddressObj:Address_Value>
+                                                        </SocketAddressObj:IP_Address>
+                                                        <SocketAddressObj:Port xsi:type="PortObj:PortObjectType">
+                                                            <PortObj:Port_Value>53</PortObj:Port_Value>
+                                                        </SocketAddressObj:Port>
+                                                    </NetworkConnectionObj:Destination_Socket_Address>
+                                                </cybox:Properties>
+                                            </cybox:Associated_Object>
+                                        </cybox:Associated_Objects>
+                                    </maecBundle:Action>
+                                    <maecBundle:Action id="Cuckoosandbox:action-64ae70a0-0a08-4dc2-9688-e5205ee966c0">
+                                        <cybox:Name xsi:type="maecVocabs:NetworkActionNameVocab-1.0">connect to socket address</cybox:Name>
+                                        <cybox:Associated_Objects>
+                                            <cybox:Associated_Object id="Cuckoosandbox:object-7621f886-be7d-4a29-a251-a52e4af1a065">
+                                                <cybox:Properties xsi:type="NetworkConnectionObj:NetworkConnectionObjectType">
+                                                    <NetworkConnectionObj:Layer4_Protocol>UDP</NetworkConnectionObj:Layer4_Protocol>
+                                                    <NetworkConnectionObj:Source_Socket_Address xsi:type="SocketAddressObj:SocketAddressObjectType">
+                                                        <SocketAddressObj:IP_Address xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                                                            <AddressObj:Address_Value>192.168.56.104</AddressObj:Address_Value>
+                                                        </SocketAddressObj:IP_Address>
+                                                        <SocketAddressObj:Port xsi:type="PortObj:PortObjectType">
+                                                            <PortObj:Port_Value>55537</PortObj:Port_Value>
+                                                        </SocketAddressObj:Port>
+                                                    </NetworkConnectionObj:Source_Socket_Address>
+                                                    <NetworkConnectionObj:Destination_Socket_Address xsi:type="SocketAddressObj:SocketAddressObjectType">
+                                                        <SocketAddressObj:IP_Address xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                                                            <AddressObj:Address_Value>8.8.8.8</AddressObj:Address_Value>
+                                                        </SocketAddressObj:IP_Address>
+                                                        <SocketAddressObj:Port xsi:type="PortObj:PortObjectType">
+                                                            <PortObj:Port_Value>53</PortObj:Port_Value>
+                                                        </SocketAddressObj:Port>
+                                                    </NetworkConnectionObj:Destination_Socket_Address>
+                                                </cybox:Properties>
+                                            </cybox:Associated_Object>
+                                        </cybox:Associated_Objects>
+                                    </maecBundle:Action>
+                                    <maecBundle:Action id="Cuckoosandbox:action-33e9e116-d28e-49eb-a74e-309e65ea946c">
+                                        <cybox:Name xsi:type="maecVocabs:NetworkActionNameVocab-1.0">connect to socket address</cybox:Name>
+                                        <cybox:Associated_Objects>
+                                            <cybox:Associated_Object id="Cuckoosandbox:object-23c5dffd-48e6-408a-8b28-9c808b21162c">
+                                                <cybox:Properties xsi:type="NetworkConnectionObj:NetworkConnectionObjectType">
+                                                    <NetworkConnectionObj:Layer4_Protocol>UDP</NetworkConnectionObj:Layer4_Protocol>
+                                                    <NetworkConnectionObj:Source_Socket_Address xsi:type="SocketAddressObj:SocketAddressObjectType">
+                                                        <SocketAddressObj:IP_Address xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                                                            <AddressObj:Address_Value>192.168.56.104</AddressObj:Address_Value>
+                                                        </SocketAddressObj:IP_Address>
+                                                        <SocketAddressObj:Port xsi:type="PortObj:PortObjectType">
+                                                            <PortObj:Port_Value>60299</PortObj:Port_Value>
+                                                        </SocketAddressObj:Port>
+                                                    </NetworkConnectionObj:Source_Socket_Address>
+                                                    <NetworkConnectionObj:Destination_Socket_Address xsi:type="SocketAddressObj:SocketAddressObjectType">
+                                                        <SocketAddressObj:IP_Address xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                                                            <AddressObj:Address_Value>8.8.8.8</AddressObj:Address_Value>
+                                                        </SocketAddressObj:IP_Address>
+                                                        <SocketAddressObj:Port xsi:type="PortObj:PortObjectType">
+                                                            <PortObj:Port_Value>53</PortObj:Port_Value>
+                                                        </SocketAddressObj:Port>
+                                                    </NetworkConnectionObj:Destination_Socket_Address>
+                                                </cybox:Properties>
+                                            </cybox:Associated_Object>
+                                        </cybox:Associated_Objects>
+                                    </maecBundle:Action>
+                                    <maecBundle:Action id="Cuckoosandbox:action-132fc9b5-08c2-4527-adef-1db8c75e33e9">
+                                        <cybox:Name xsi:type="maecVocabs:DNSActionNameVocab-1.0">send dns query</cybox:Name>
+                                        <cybox:Associated_Objects>
+                                            <cybox:Associated_Object idref="Cuckoosandbox:object-1d6e2d0b-4873-4e9a-9adf-5c8290e01b18"/>
+                                        </cybox:Associated_Objects>
+                                    </maecBundle:Action>
+                                    <maecBundle:Action id="Cuckoosandbox:action-acda8fc4-8b90-4e93-acd3-3822240f9863">
+                                        <cybox:Name xsi:type="maecVocabs:DNSActionNameVocab-1.0">send dns query</cybox:Name>
+                                        <cybox:Associated_Objects>
+                                            <cybox:Associated_Object idref="Cuckoosandbox:object-1d6e2d0b-4873-4e9a-9adf-5c8290e01b18"/>
+                                        </cybox:Associated_Objects>
+                                    </maecBundle:Action>
+                                    <maecBundle:Action id="Cuckoosandbox:action-1c80dbd0-d5a0-437b-97ea-51dc94bfb856">
+                                        <cybox:Name xsi:type="maecVocabs:DNSActionNameVocab-1.0">send dns query</cybox:Name>
+                                        <cybox:Associated_Objects>
+                                            <cybox:Associated_Object idref="Cuckoosandbox:object-1d6e2d0b-4873-4e9a-9adf-5c8290e01b18"/>
+                                        </cybox:Associated_Objects>
+                                    </maecBundle:Action>
+                                </maecBundle:Action_List>
+                            </maecBundle:Action_Collection>
+                        </maecBundle:Action_Collections>
+                        <maecBundle:Object_Collections>
+                            <maecBundle:Object_Collection name="Dropped Files" id="Cuckoosandbox:object-b6bca824-e0bb-4fa5-91bb-b0892e2e1467">
+                                <maecBundle:Object_List>
+                                    <maecBundle:Object id="Cuckoosandbox:object-6addb712-5792-4df5-a146-871f2e8fcf6d">
+                                        <cybox:Properties xsi:type="FileObj:FileObjectType">
+                                            <FileObj:File_Name>Trojan-Downloader.Win32.Swizzor.co</FileObj:File_Name>
+                                            <FileObj:File_Path>/Users/ptrac3/cuckoo/storage/binaries/0df723c4e5a5287f109b1c9786e96301ab07d0f19dc88b1d8e84591c429810bb</FileObj:File_Path>
+                                            <FileObj:Size_In_Bytes>185985</FileObj:Size_In_Bytes>
+                                            <FileObj:File_Format>PE32 executable for MS Windows (GUI) Intel 80386 32-bit</FileObj:File_Format>
+                                            <FileObj:Hashes>
+                                                <cyboxCommon:Hash>
+                                                    <cyboxCommon:Type>MD5</cyboxCommon:Type>
+                                                    <cyboxCommon:Simple_Hash_Value>ede7b41f2c7f595a360e286355477931</cyboxCommon:Simple_Hash_Value>
+                                                </cyboxCommon:Hash>
+                                                <cyboxCommon:Hash>
+                                                    <cyboxCommon:Type>SHA1</cyboxCommon:Type>
+                                                    <cyboxCommon:Simple_Hash_Value>9b2ffee3363319ee1c2173a04dad6dbcc5af441f</cyboxCommon:Simple_Hash_Value>
+                                                </cyboxCommon:Hash>
+                                                <cyboxCommon:Hash>
+                                                    <cyboxCommon:Type>SHA256</cyboxCommon:Type>
+                                                    <cyboxCommon:Simple_Hash_Value>0df723c4e5a5287f109b1c9786e96301ab07d0f19dc88b1d8e84591c429810bb</cyboxCommon:Simple_Hash_Value>
+                                                </cyboxCommon:Hash>
+                                                <cyboxCommon:Hash>
+                                                    <cyboxCommon:Type>SHA512</cyboxCommon:Type>
+                                                    <cyboxCommon:Simple_Hash_Value>60aea235fedcdbda01d80ecdd296742eee8171860f271f76fac9a534558d5e136bfc9a67e487dc82e9d28254d3d1fbae9785793c538965c40d42f197f88bce36</cyboxCommon:Simple_Hash_Value>
+                                                </cyboxCommon:Hash>
+                                                <cyboxCommon:Hash>
+                                                    <cyboxCommon:Type>SSDEEP</cyboxCommon:Type>
+                                                    <cyboxCommon:Fuzzy_Hash_Value>3072:KDZJt0POzG1/ygjsKiCu81/n/DYn6QS5Onv/YohICrKxmSiaqwo:aXt0GzG1/ygeC/v/kntD/1Laq</cyboxCommon:Fuzzy_Hash_Value>
+                                                </cyboxCommon:Hash>
+                                            </FileObj:Hashes>
+                                        </cybox:Properties>
+                                    </maecBundle:Object>
+                                </maecBundle:Object_List>
+                            </maecBundle:Object_Collection>
+                            <maecBundle:Object_Collection name="Deduplicated Objects" id="maec-f995d68b-objc-3">
+                                <maecBundle:Object_List>
+                                    <maecBundle:Object id="Cuckoosandbox:object-97a9625a-db4f-4109-ab3a-a2de73cef105">
+                                        <cybox:Properties xsi:type="WinHandleObj:WindowsHandleObjectType">
+                                            <WinHandleObj:ID>4294967295</WinHandleObj:ID>
+                                            <WinHandleObj:Type>Process</WinHandleObj:Type>
+                                        </cybox:Properties>
+                                    </maecBundle:Object>
+                                    <maecBundle:Object id="Cuckoosandbox:object-1d6e2d0b-4873-4e9a-9adf-5c8290e01b18">
+                                        <cybox:Properties xsi:type="NetworkConnectionObj:NetworkConnectionObjectType">
+                                            <NetworkConnectionObj:Layer4_Protocol>UDP</NetworkConnectionObj:Layer4_Protocol>
+                                            <NetworkConnectionObj:Layer7_Protocol>DNS</NetworkConnectionObj:Layer7_Protocol>
+                                            <NetworkConnectionObj:Layer7_Connections/>
+                                        </cybox:Properties>
+                                    </maecBundle:Object>
+                                    <maecBundle:Object id="Cuckoosandbox:object-d51c04de-9448-482f-b9df-25a06c1224c6">
+                                        <cybox:Properties xsi:type="WinHandleObj:WindowsHandleObjectType">
+                                            <WinHandleObj:ID>120</WinHandleObj:ID>
+                                            <WinHandleObj:Type>Section</WinHandleObj:Type>
+                                        </cybox:Properties>
+                                    </maecBundle:Object>
+                                </maecBundle:Object_List>
+                            </maecBundle:Object_Collection>
+                        </maecBundle:Object_Collections>
+                    </maecBundle:Collections>
+                </maecPackage:Bundle>
+                <maecPackage:Bundle defined_subject="false" content_type="static analysis tool output" id="Cuckoosandbox:bundle-ed8ab87c-f462-49d2-82c2-28c21383a832" schema_version="4.1">
+                    <maecBundle:Objects>
+                        <maecBundle:Object id="Cuckoosandbox:object-cf02b43c-93b7-4e2f-b9d5-8f9ccd04f75b">
+                            <cybox:Properties xsi:type="WinExecutableFileObj:WindowsExecutableFileObjectType">
+                                <WinExecutableFileObj:Imports>
+                                    <WinExecutableFileObj:Import>
+                                        <WinExecutableFileObj:File_Name>KERNEL32.DLL</WinExecutableFileObj:File_Name>
+                                        <WinExecutableFileObj:Imported_Functions>
+                                            <WinExecutableFileObj:Imported_Function>
+                                                <WinExecutableFileObj:Virtual_Address>0x48344c</WinExecutableFileObj:Virtual_Address>
+                                            </WinExecutableFileObj:Imported_Function>
+                                        </WinExecutableFileObj:Imported_Functions>
+                                    </WinExecutableFileObj:Import>
+                                </WinExecutableFileObj:Imports>
+                                <WinExecutableFileObj:Sections>
+                                    <WinExecutableFileObj:Section>
+                                        <WinExecutableFileObj:Section_Header>
+                                            <WinExecutableFileObj:Name>.text</WinExecutableFileObj:Name>
+                                            <WinExecutableFileObj:Virtual_Size>252413</WinExecutableFileObj:Virtual_Size>
+                                            <WinExecutableFileObj:Virtual_Address>0x00001000</WinExecutableFileObj:Virtual_Address>
+                                            <WinExecutableFileObj:Size_Of_Raw_Data>0x0001d53c</WinExecutableFileObj:Size_Of_Raw_Data>
+                                        </WinExecutableFileObj:Section_Header>
+                                        <WinExecutableFileObj:Entropy>
+                                            <WinExecutableFileObj:Value>7.99848476575</WinExecutableFileObj:Value>
+                                        </WinExecutableFileObj:Entropy>
+                                    </WinExecutableFileObj:Section>
+                                    <WinExecutableFileObj:Section>
+                                        <WinExecutableFileObj:Section_Header>
+                                            <WinExecutableFileObj:Name>.rdata</WinExecutableFileObj:Name>
+                                            <WinExecutableFileObj:Virtual_Size>48098</WinExecutableFileObj:Virtual_Size>
+                                            <WinExecutableFileObj:Virtual_Address>0x0003f000</WinExecutableFileObj:Virtual_Address>
+                                            <WinExecutableFileObj:Size_Of_Raw_Data>0x000055d8</WinExecutableFileObj:Size_Of_Raw_Data>
+                                        </WinExecutableFileObj:Section_Header>
+                                        <WinExecutableFileObj:Entropy>
+                                            <WinExecutableFileObj:Value>7.99344468134</WinExecutableFileObj:Value>
+                                        </WinExecutableFileObj:Entropy>
+                                    </WinExecutableFileObj:Section>
+                                    <WinExecutableFileObj:Section>
+                                        <WinExecutableFileObj:Section_Header>
+                                            <WinExecutableFileObj:Name>.data</WinExecutableFileObj:Name>
+                                            <WinExecutableFileObj:Virtual_Size>213596</WinExecutableFileObj:Virtual_Size>
+                                            <WinExecutableFileObj:Virtual_Address>0x0004b000</WinExecutableFileObj:Virtual_Address>
+                                            <WinExecutableFileObj:Size_Of_Raw_Data>0x0000710c</WinExecutableFileObj:Size_Of_Raw_Data>
+                                        </WinExecutableFileObj:Section_Header>
+                                        <WinExecutableFileObj:Entropy>
+                                            <WinExecutableFileObj:Value>7.99399638412</WinExecutableFileObj:Value>
+                                        </WinExecutableFileObj:Entropy>
+                                    </WinExecutableFileObj:Section>
+                                    <WinExecutableFileObj:Section>
+                                        <WinExecutableFileObj:Section_Header>
+                                            <WinExecutableFileObj:Name>.reloc</WinExecutableFileObj:Name>
+                                            <WinExecutableFileObj:Virtual_Size>24126</WinExecutableFileObj:Virtual_Size>
+                                            <WinExecutableFileObj:Virtual_Address>0x00080000</WinExecutableFileObj:Virtual_Address>
+                                            <WinExecutableFileObj:Size_Of_Raw_Data>0x0000346d</WinExecutableFileObj:Size_Of_Raw_Data>
+                                        </WinExecutableFileObj:Section_Header>
+                                        <WinExecutableFileObj:Entropy>
+                                            <WinExecutableFileObj:Value>7.97644392252</WinExecutableFileObj:Value>
+                                        </WinExecutableFileObj:Entropy>
+                                    </WinExecutableFileObj:Section>
+                                </WinExecutableFileObj:Sections>
+                            </cybox:Properties>
+                        </maecBundle:Object>
+                    </maecBundle:Objects>
+                </maecPackage:Bundle>
+                <maecPackage:Bundle defined_subject="false" content_type="static analysis tool output" id="Cuckoosandbox:bundle-58e7c04c-c969-46e1-b2f9-683f48375ce9" schema_version="4.1">
+                    <maecBundle:Objects>
+                        <maecBundle:Object id="Cuckoosandbox:object-39856639-ffee-4ba9-bac6-bfc064ed4d8a">
+                            <cybox:Properties xsi:type="FileObj:FileObjectType">
+                                <FileObj:Extracted_Features>
+                                    <cyboxCommon:Strings>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>!This program cannot be run in DOS mode.</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>.rdata</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>.reloc</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>TJ@p.2l6</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>U{XLMn</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>0%/0`?</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>_D~bllm</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>x9|A4o</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>2OI_(4</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>O?@1{QVV</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>t%3:O$</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>N4;ZZ(!</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>T;m;-x</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>f7CvQ?</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>5k"-ng</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>O%S5;LE</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>C$g?Q?</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>a?i:J~ly</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>iPS4sH</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>T?((c1</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>Uw_w1=</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>L||8qg</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>sjtn=iv</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>bDeug&lt;Tz</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>YE'%Cn&gt;.</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>o;:uz]</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>JrG7%|</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>Vb0y_@c</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>yf]HNM</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>kDo8oP</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>9j&amp;W8d?L</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>_m`Fql</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>&gt;\j]`U</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>7N=bGK</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>lp9tf'</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>f6CI+`_</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>A)86"b%</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>dnla|=</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>A0.BDF</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>)]{#8$</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>8tM{&amp;3</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>,7eawE</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>2zPQ&amp;T</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>'w_qds</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>Z4OpQp</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>y70Z[$</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>5g]#PyyEP</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>A']0Lm</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>fwD:/AF</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>#L$4oj</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>H.`@uE</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>2f&gt;v6\</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>0hRHzU</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>V:RxUt`!</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>D:*piL</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>)tHC{.</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>_E`/Q^</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>o"3wgvR</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>nzxXon4</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>5Q5Z&gt;Gr</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>B)Zh0-</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>y?? ";2G</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>OW:rCc</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>*c(;xckr</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>rg1EF8y</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>&lt;|X)J`T</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>IIJ&gt;&lt;pQD4</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>NGTZe}`</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>0'PJ.B</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>/&lt;U2xv</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>jG?=,tJ}</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>.Z!~L+</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>4?E]qm</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>36LuUbL</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>{gsiWK</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>WWR`,OF</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>MM~g6P</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>e/"I[y</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>+Y%&lt;mh</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>T&gt;7L;B/</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>_4~^ap</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>icx"Ck</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>n:me4n+s</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>y*Aog&gt;</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>b\S{c]</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>h+H2+7</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>rA'6mxI</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>i\dL&lt;?</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>wVZUp5</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>[8FT0/zyu</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>]=E(iMxW=</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>@rjcb~</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>9n:pR(V</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>/an`#f</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>4Ud|E3</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>"q%{9RUN</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>i0WSjK[</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>#lz+b(</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>dyX`8D </cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>gw51`w</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>&gt;TUxLv{</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>bKEV4&amp;</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>y+NBu~</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>u/3ZnOJ</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>&lt;.vpN&amp;</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>(5zYT8;</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>/'86t-y</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>Q0l|&lt;oW</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>~Q[kuO</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>x`Pz\b</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>7Nk/s9F</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>A3rc3 </cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>C/HvamU</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>[n}+$&gt;</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>wRL;9#+</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>"WSV)j</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>Xh-0 F</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>CBL}8hV</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>McbJGv</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>-]YzCL</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>mlD5&amp;Y</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>&amp;}Q#Zw</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>;=ft$x</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>:y$e{R</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>oL75As-</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>v"{c-ob$S</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>%Qa:[&gt;C</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>^+?I'\2</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>pzq978</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>g2ZkE,</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>'5Vk"T</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>+5G ho%!</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>5omuz5</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>-(vUZt(</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>seruz6Uaw</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>e,_"A|U</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>Let_fT</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>DE%l((</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>No@B(=</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>-'Jx7A</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>o\x0q8</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>.o~(=m</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>Y;9xKZ</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>q!flnMJ</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>h?;9O].</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>OWoW&lt;M</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>[FI/Vf(</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>)ka"R=[</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>DS~&gt;%S</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>%=U5Hw</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>;i^T[x</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>ja"jc6</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>tHc5X1</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>2(zBcK</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>7?vie#</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>mwRY9x</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>~0g2:45E</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>L:s4%14k</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>3%^?#e</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>+cUo@G</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>IDtP5!</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>u"UUGJ$</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>S[joX?.$</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>c( w"w</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>{X5hJj3</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>tkNs!&amp;</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>.=?k7a</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>@ac$I]Y</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>(nU%i~</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>&lt;(&amp;}&gt;dy</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>"b_)~D</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>!b.j))</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>1oC6Y8</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>v9K81;/E.</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>B+w(A9</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>VuIA)N</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>w,H7 |</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>XM3#\P</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>z4Vvtb</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>iusZ*}</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>BGKESP</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>q"OBXy</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>{typSy</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>Ohj]8_</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>pt5yF-</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>%e3pbAo]00</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>apj-e,(</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>7WI$gD</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>])(5Yx</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>c,e8\F</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>9uzK";</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>]!4ocW7</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>!9AyZfX </cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>/z?.,n</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>zg?qw*</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>bK8zL8_</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>@C{niP</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>^4#.:.</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>p#$*N7</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>CS${;I</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>ITI1Fuu</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>$6kp&gt;(</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>h:D* oW</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>*QM;b%</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>TRx=QLG</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>vv5p5w[[</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>"n&lt;Z\4</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>!&amp;Rso'Rt</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>z[hNh/</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>PT8v\I</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>qm2NCE</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value> :e}CE</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>9nG/ak</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>Kp!IiX</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>db3`&gt;2</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>o03+[T|</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>d Si'eY</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>r;pwWn</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>&amp;s3e-K</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>+.PuDS{X</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>wC'E /</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>4u=Gvn</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>29|.?%MP</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>5p- 3&lt;q</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>hJxT\?d</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>pX(gr2</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>I9bcLt</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>!Lf%#{</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>\qn{^g</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>rAZ?{?</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>91,AWHs</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>+x{s$l</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>9{EQ8I7</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>Cy #OkI</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>ZX2I:)</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>&amp;!!8&lt;C</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>KcrRMK</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>)qewGy</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>PP`YJ]</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>_sV'~OX</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>]&gt;)&lt;QK0</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>b;~(E({c</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>yY$AbE</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>q|=m@/t</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>m730:j</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>.J4oLZYo</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>^sN1QC</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>4Q0.i?</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>UVUNn=</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>Q`*8#O5</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>&amp;y8 dex0</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>?\#- sr</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>-]3c!DD</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>zX5sGb</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>l/z V$b</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>jf:?$b</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>#7VaL[</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>jmTI+&amp;l</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>&lt;[awz!</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>]`&lt;5"QT</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>2}9Tw/</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>f?)#k=/</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>u`==Nk</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>RUH.ry</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>uM'WoU&amp;^</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>Uv[X9$</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>9r.}yy;</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value> WMk|1</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>W~3/nF</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>@TLvQ3</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>7ls%Iv</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>"3tUG4</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>--@1MD</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>2.j!,\</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>g{pk\w'</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>X~r5&lt;z</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>iVHx1G</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value> (49js</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>h\E=~Phj</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>Qg|:NNbk</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>&lt;~.4ds</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value> urMNw</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>WO'M+L</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>%clo01(</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>|W([\&lt;</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>Q0O_8q&lt;</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>D[2a`D</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>C"RPi4/</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>XN&amp;Z&gt;+</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>qpdyw$</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>A -s^csPv</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>r&gt;jjW7</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>]%GHv_L</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>N2|H';?[5+</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>,CO*G0</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>ilS9^v</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>m`U!P'</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>g8Sen1</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>GD,zb[&amp;=H?2IQ;</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>oFKa|W</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>QN;K+RW-</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>WN/S?@Z</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>;n&lt;3:t</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>q_FZzLj</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>.o{FpL</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>YbI6I?</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>nHUm;V</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>U43P-sA-</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>qBtq),c+</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>s#\g*&gt;</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>J!EdH5</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>{Xu-%9j)A</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>ScWK7y)</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>1y,c2GC</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>.(YD,x</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>CIOPZs</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>@#/T2WR</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>`6#uI.]</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>0mVgskx</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>K!!q;c@</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>gM;~/:</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>,_&gt;B\&lt;</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value> z`"Wyh</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>9:]cGM+</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>L@^f.ej</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>&amp;\`2w_Z</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>Y57p*K</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>T.]^I5</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>gda%?G</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>2v\Dn^4</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>I{4&gt;h\</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>7YZ/T]</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>3(=h?yf</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>El?U;==</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>]x:q_~</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>FO75#"1/e</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>?U$aVWZ</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>[2Tm"+"</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>THCIuc</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>Eaaaadaaaa</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>J%EE?&gt;:</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>paaa60</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>[aa6R%\a</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>2|aa6R%\a</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>2|aa6&amp;R%\a</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>?d%yd)</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>BJpx4b</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>}60rTII</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>cJ&gt;hi(</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>KERNEL32.DLL</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                    </cyboxCommon:Strings>
+                                </FileObj:Extracted_Features>
+                            </cybox:Properties>
+                        </maecBundle:Object>
+                    </maecBundle:Objects>
+                </maecPackage:Bundle>
+                <maecPackage:Bundle defined_subject="false" content_type="static analysis tool output" id="Cuckoosandbox:bundle-5f40dbeb-75a7-4e06-9cc8-e3da61a9d936" schema_version="4.1">
+                    <maecBundle:AV_Classifications>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>Bkav</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>1.3.0.4959</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140616</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>W32.Clod991.Trojan.72e2</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>MicroWorld-eScan</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>12.0.250.0</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140617</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>GenPack:Trojan.Downloader.Swizzor.AO</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>nProtect</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>2014-06-16.01</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140616</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>Trojan-Downloader/W32.Swizzor.185985.K</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>CMC</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>1.1.0.977</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140617</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>Generic.Win32.ede7b41f2c!MD</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>CAT-QuickHeal</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>14.00</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140617</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>Win32.AdWare.Lop.ag.a</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>McAfee</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>6.0.4.564</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140617</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>Swizzor.gen</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>VIPRE</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>30356</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140616</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>Trojan.Win32.Packer.PolyCrypt.dd (ep)</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>K7AntiVirus</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>9.179.12422</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140616</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>Riskware ( 0040eff71 )</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>K7GW</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>9.179.12422</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140616</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>Riskware ( 0040eff71 )</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>TheHacker</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>6.8.0.5.466</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140616</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>Trojan/Downloader.Swizzor</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>Agnitum</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>5.5.1.3</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140614</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>Packed/UPC</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>F-Prot</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>4.7.1.166</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140617</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>W32/Heuristic-210!Eldorado</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>Symantec</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>20131.1.5.61</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140617</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>Adware.Lop</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>Norman</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>7.04.04</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140617</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>Swizzor.GE</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>TotalDefense</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>37.0.11004</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140617</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>Win32/Swizzor</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>TrendMicro-HouseCall</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>9.700.0.1001</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140617</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>TROJ_SWIZZOR.KQ</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>Avast</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>8.0.1489.320</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140617</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>Win32:Swizzor-gen [Trj]</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>ClamAV</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>0.98.4.0</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140617</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>Adware.Lop-131</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>Kaspersky</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>12.0.0.1225</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140617</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>not-a-virus:AdWare.Win32.Lop.ag</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>BitDefender</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>7.2</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140617</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>GenPack:Trojan.Downloader.Swizzor.AO</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>NANO-Antivirus</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>0.28.0.60253</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140617</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>Riskware.Win32.Lop.nbdh</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>Rising</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>25.0.0.11</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140617</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>PE:Trojan.DL.Swizzor.dvu!1074210396</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>Ad-Aware</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>12.0.163.0</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140617</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>GenPack:Trojan.Downloader.Swizzor.AO</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>Sophos</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>4.98.0</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140617</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>Troj/Swizz-Fam</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>Comodo</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>18579</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140617</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>TrojWare.Win32.TrojanDownloader.Swizzor.Gen</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>F-Secure</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>11.0.19100.45</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140617</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>GenPack:Trojan.Downloader.Swizzor.AO</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>DrWeb</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>7.0.7.12100</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140617</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>Trojan.Swizzor</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>Zillya</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>2.0.0.1828</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140616</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>Downloader.Swizzor.Win32.12349</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>AntiVir</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>7.11.155.64</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140617</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>ADSPY/Lop.ag</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>TrendMicro</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>9.740.0.1012</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140617</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>TROJ_SWIZZOR.KQ</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>McAfee-GW-Edition</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>2013</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140616</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>Heuristic.LooksLike.Win32.Suspicious.C</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>Emsisoft</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>3.0.0.599</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140617</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>GenPack:Trojan.Downloader.Swizzor.AO (B)</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>Jiangmin</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>16.0.100</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140617</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>Adware/Lop.tz</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>Antiy-AVL</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>1.0.0.1</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140616</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>GrayWare[AdWare:not-a-virus]/Win32.Lop</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>Kingsoft</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>2013.4.9.267</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140617</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>Win32.TrojDownloader.Swizzor.co.(kcloud)</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>Microsoft</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>1.10600</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140617</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>Trojan:Win32/C2Lop.B</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>GData</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>24</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140617</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>GenPack:Trojan.Downloader.Swizzor.AO</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>Commtouch</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>5.4.1.7</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140617</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>W32/Heuristic-210!Eldorado</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>AhnLab-V3</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>2014.06.17.01</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140616</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>Win-Trojan/Swizzor.185985.S</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>VBA32</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>3.12.26.0</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140616</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>AdWare.Lop</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>Baidu-International</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>3.5.1.41473</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140617</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>AdWare.Win32.Lop.AJgj</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>ESET-NOD32</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>9957</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140617</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>a variant of Win32/TrojanDownloader.Swizzor</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>Ikarus</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>T3.1.6.1.0</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140617</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>not-a-virus:AdWare.Win32.Lop</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>AVG</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>14.0.0.3964</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140617</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>Generic4.CGKV</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>Panda</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>10.0.3.5</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140616</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>Trj/Ofuscated.gen</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>Qihoo-360</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>1.0.0.1015</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140617</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>HEUR/Malware.QVM19.Gen</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                    </maecBundle:AV_Classifications>
+                </maecPackage:Bundle>
+            </maecPackage:Findings_Bundles>
+        </maecPackage:Malware_Subject>
+    </maecPackage:Malware_Subjects>
+</maecPackage:MAEC_Package>

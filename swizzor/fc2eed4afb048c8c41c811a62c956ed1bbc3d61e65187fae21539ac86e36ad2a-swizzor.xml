@@ -1,0 +1,1451 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE doc [<!ENTITY comma '&#44;'>]>
+<!--
+Cuckoo Sandbox MAEC 4.1 malware analysis report
+http://www.cuckoosandbox.org
+-->
+<maecPackage:MAEC_Package 
+	xmlns:cyboxCommon="http://cybox.mitre.org/common-2"
+	xmlns:cybox="http://cybox.mitre.org/cybox-2"
+	xmlns:cyboxVocabs="http://cybox.mitre.org/default_vocabularies-2"
+	xmlns:AddressObj="http://cybox.mitre.org/objects#AddressObject-2"
+	xmlns:FileObj="http://cybox.mitre.org/objects#FileObject-2"
+	xmlns:NetworkConnectionObj="http://cybox.mitre.org/objects#NetworkConnectionObject-2"
+	xmlns:PortObj="http://cybox.mitre.org/objects#PortObject-2"
+	xmlns:ProcessObj="http://cybox.mitre.org/objects#ProcessObject-2"
+	xmlns:SocketAddressObj="http://cybox.mitre.org/objects#SocketAddressObject-1"
+	xmlns:WinExecutableFileObj="http://cybox.mitre.org/objects#WinExecutableFileObject-2"
+	xmlns:WinFileObj="http://cybox.mitre.org/objects#WinFileObject-2"
+	xmlns:WinHandleObj="http://cybox.mitre.org/objects#WinHandleObject-2"
+	xmlns:maecBundle="http://maec.mitre.org/XMLSchema/maec-bundle-4"
+	xmlns:maecPackage="http://maec.mitre.org/XMLSchema/maec-package-2"
+	xmlns:maecVocabs="http://maec.mitre.org/default_vocabularies-1"
+	xmlns:Cuckoosandbox="http://www.cuckoosandbox.org"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://cybox.mitre.org/common-2 http://cybox.mitre.org/XMLSchema/common/2.1/cybox_common.xsd http://cybox.mitre.org/cybox-2 http://cybox.mitre.org/XMLSchema/core/2.1/cybox_core.xsd http://cybox.mitre.org/default_vocabularies-2 http://cybox.mitre.org/XMLSchema/default_vocabularies/2.1/cybox_default_vocabularies.xsd http://cybox.mitre.org/objects#AddressObject-2 http://cybox.mitre.org/XMLSchema/objects/Address/2.1/Address_Object.xsd http://cybox.mitre.org/objects#FileObject-2 http://cybox.mitre.org/XMLSchema/objects/File/2.1/File_Object.xsd http://cybox.mitre.org/objects#NetworkConnectionObject-2 http://cybox.mitre.org/XMLSchema/objects/Network_Connection/2.1/Network_Connection_Object.xsd http://cybox.mitre.org/objects#PortObject-2 http://cybox.mitre.org/XMLSchema/objects/Port/2.1/Port_Object.xsd http://cybox.mitre.org/objects#ProcessObject-2 http://cybox.mitre.org/XMLSchema/objects/Process/2.1/Process_Object.xsd http://cybox.mitre.org/objects#SocketAddressObject-1 http://cybox.mitre.org/XMLSchema/objects/Socket_Address/1.1/Socket_Address_Object.xsd http://cybox.mitre.org/objects#WinExecutableFileObject-2 http://cybox.mitre.org/XMLSchema/objects/Win_Executable_File/2.1/Win_Executable_File_Object.xsd http://cybox.mitre.org/objects#WinFileObject-2 http://cybox.mitre.org/XMLSchema/objects/Win_File/2.1/Win_File_Object.xsd http://cybox.mitre.org/objects#WinHandleObject-2 http://cybox.mitre.org/XMLSchema/objects/Win_Handle/2.1/Win_Handle_Object.xsd http://maec.mitre.org/XMLSchema/maec-bundle-4 http://maec.mitre.org/language/version4.1/maec_bundle_schema.xsd http://maec.mitre.org/XMLSchema/maec-package-2 http://maec.mitre.org/language/version4.1/maec_package_schema.xsd http://maec.mitre.org/default_vocabularies-1 http://maec.mitre.org/language/version4.1/maec_default_vocabularies.xsd" id="Cuckoosandbox:package-68735fae-c05c-4c0d-ada4-32793e3a8c2d" schema_version="2.1">
+    <maecPackage:Malware_Subjects>
+        <maecPackage:Malware_Subject id="Cuckoosandbox:malware_subject-37db9bef-c2cf-4068-90e2-e4925a4d3003">
+            <maecPackage:Malware_Instance_Object_Attributes id="Cuckoosandbox:object-9722902b-1b5b-4d83-898a-4b2d4ad781d4">
+                <cybox:Properties xsi:type="FileObj:FileObjectType">
+                    <FileObj:File_Name>Trojan-Downloader.Win32.Swizzor.gn</FileObj:File_Name>
+                    <FileObj:File_Path>/Users/ptrac3/cuckoo/storage/binaries/fc2eed4afb048c8c41c811a62c956ed1bbc3d61e65187fae21539ac86e36ad2a</FileObj:File_Path>
+                    <FileObj:Size_In_Bytes>14336</FileObj:Size_In_Bytes>
+                    <FileObj:File_Format>PE32 executable for MS Windows (GUI) Intel 80386 32-bit</FileObj:File_Format>
+                    <FileObj:Hashes>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type>MD5</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>d8c23aad292b7e8b3a0458b7c366d13c</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type>SHA1</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>edb360751ff9c175ef5c8aabd4708847e5ea265c</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type>SHA256</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>fc2eed4afb048c8c41c811a62c956ed1bbc3d61e65187fae21539ac86e36ad2a</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type>SHA512</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>74f7a850fcb72eda1b2d7677c9fdad7e2bb5189b24169b2514894fa43d3eaea967f66a67ad49dd744b3d2c608a28d643122f5707b73c8ed8c727bb461c5e5679</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type>SSDEEP</cyboxCommon:Type>
+                            <cyboxCommon:Fuzzy_Hash_Value>384:cmU6d4LWWdeVa9BNDHnbJlfnUe26j4LAi:5U6mPeu12g</cyboxCommon:Fuzzy_Hash_Value>
+                        </cyboxCommon:Hash>
+                    </FileObj:Hashes>
+                </cybox:Properties>
+            </maecPackage:Malware_Instance_Object_Attributes>
+            <maecPackage:Analyses>
+                <maecPackage:Analysis start_datetime="2015-06-03T23:09:01" complete_datetime="2015-06-03T23:11:19" method="dynamic" type="triage" id="Cuckoosandbox:analysis-6c36ef54-d4c2-4ee8-9728-c71ec1cde12f">
+                    <maecPackage:Summary>Cuckoo Sandbox dynamic analysis of the malware instance object.</maecPackage:Summary>
+                    <maecPackage:Findings_Bundle_Reference bundle_idref="Cuckoosandbox:bundle-a26d1de6-7c7c-4885-81e1-4b2460f4f830"/>
+                    <maecPackage:Tools>
+                        <maecPackage:Tool id="Cuckoosandbox:tool-e67b0c9f-2b00-4c97-b31e-873b42dc018c">
+                            <cyboxCommon:Name>Cuckoo Sandbox</cyboxCommon:Name>
+                            <cyboxCommon:Vendor>http://www.cuckoosandbox.org</cyboxCommon:Vendor>
+                            <cyboxCommon:Version>1.3-dev</cyboxCommon:Version>
+                        </maecPackage:Tool>
+                    </maecPackage:Tools>
+                </maecPackage:Analysis>
+                <maecPackage:Analysis start_datetime="2015-06-03T23:09:01" complete_datetime="2015-06-03T23:11:19" method="static" type="triage" id="Cuckoosandbox:analysis-5dfff993-5b66-4c2a-9bbd-d02adc522ed1">
+                    <maecPackage:Summary>Cuckoo Sandbox static (PE) analysis of the malware instance object.</maecPackage:Summary>
+                    <maecPackage:Findings_Bundle_Reference bundle_idref="Cuckoosandbox:bundle-49fe9338-7ff8-4375-8c6c-eeb80747437d"/>
+                    <maecPackage:Tools>
+                        <maecPackage:Tool id="Cuckoosandbox:tool-241dafe7-6887-4783-9130-bb66474c4efe">
+                            <cyboxCommon:Name>Cuckoo Sandbox Static Analysis</cyboxCommon:Name>
+                            <cyboxCommon:Vendor>http://www.cuckoosandbox.org</cyboxCommon:Vendor>
+                            <cyboxCommon:Version>1.3-dev</cyboxCommon:Version>
+                        </maecPackage:Tool>
+                    </maecPackage:Tools>
+                </maecPackage:Analysis>
+                <maecPackage:Analysis start_datetime="2015-06-03T23:09:01" complete_datetime="2015-06-03T23:11:19" method="static" type="triage" id="Cuckoosandbox:analysis-6f1c4b08-7d8c-4df0-99ca-0dd677a76414">
+                    <maecPackage:Summary>Cuckoo Sandbox strings analysis of the malware instance object.</maecPackage:Summary>
+                    <maecPackage:Findings_Bundle_Reference bundle_idref="Cuckoosandbox:bundle-7c3ccda5-951b-4c3e-88df-75d2f3f79e09"/>
+                    <maecPackage:Tools>
+                        <maecPackage:Tool id="Cuckoosandbox:tool-c473d3a9-f58c-4b8e-957e-4d6175ca9e0c">
+                            <cyboxCommon:Name>Cuckoo Sandbox Strings</cyboxCommon:Name>
+                            <cyboxCommon:Vendor>http://www.cuckoosandbox.org</cyboxCommon:Vendor>
+                            <cyboxCommon:Version>1.3-dev</cyboxCommon:Version>
+                        </maecPackage:Tool>
+                    </maecPackage:Tools>
+                </maecPackage:Analysis>
+                <maecPackage:Analysis start_datetime="2015-06-03T23:09:01" complete_datetime="2015-06-03T23:11:19" method="static" type="triage" id="Cuckoosandbox:analysis-903a9083-34dc-4617-9bae-91ea85140195">
+                    <maecPackage:Summary>Virustotal results for the malware instance object.</maecPackage:Summary>
+                    <maecPackage:Findings_Bundle_Reference bundle_idref="Cuckoosandbox:bundle-b565fd8f-f4a5-49cb-a194-08effb970a84"/>
+                    <maecPackage:Tools>
+                        <maecPackage:Tool id="Cuckoosandbox:tool-9bf6a9c9-efac-48f5-a0f0-f886bb22e99c">
+                            <cyboxCommon:Name>VirusTotal</cyboxCommon:Name>
+                            <cyboxCommon:Vendor>https://www.virustotal.com/</cyboxCommon:Vendor>
+                        </maecPackage:Tool>
+                    </maecPackage:Tools>
+                </maecPackage:Analysis>
+            </maecPackage:Analyses>
+            <maecPackage:Findings_Bundles>
+                <maecPackage:Bundle defined_subject="false" content_type="dynamic analysis tool output" id="Cuckoosandbox:bundle-a26d1de6-7c7c-4885-81e1-4b2460f4f830" schema_version="4.1">
+                    <maecBundle:Process_Tree>
+                        <maecBundle:Root_Process xsi:type="maecBundle:ProcessTreeNodeType" id="Cuckoosandbox:process_tree_node-ea340dfe-07c7-4d4b-b036-c4e42929c51c">
+                            <ProcessObj:PID>368</ProcessObj:PID>
+                            <ProcessObj:Name>Trojan-Downloader.Win32.Swizzor.gn</ProcessObj:Name>
+                            <maecBundle:Initiated_Actions>
+                                <maecBundle:Action_Reference action_id="Cuckoosandbox:action-81dfbdff-60b6-434d-9c34-f84697f9fc54"/>
+                                <maecBundle:Action_Reference action_id="Cuckoosandbox:action-e512cfcd-73f8-4468-9770-12edf9c92413"/>
+                                <maecBundle:Action_Reference action_id="Cuckoosandbox:action-01c6669b-1c74-4cde-ba59-0b9631643a6b"/>
+                                <maecBundle:Action_Reference action_id="Cuckoosandbox:action-7ad59e02-449a-410d-94c2-1d1dfaf79257"/>
+                            </maecBundle:Initiated_Actions>
+                        </maecBundle:Root_Process>
+                    </maecBundle:Process_Tree>
+                    <maecBundle:Collections>
+                        <maecBundle:Action_Collections>
+                            <maecBundle:Action_Collection name="Filesystem Actions" id="Cuckoosandbox:action-120cf0f0-dfd7-45b2-bba2-222b2f058b47">
+                                <maecBundle:Action_List>
+                                    <maecBundle:Action timestamp="2015-03-06T22:02:53.633" action_status="Success" ordinal_position="1" id="Cuckoosandbox:action-81dfbdff-60b6-434d-9c34-f84697f9fc54"/>
+                                </maecBundle:Action_List>
+                            </maecBundle:Action_Collection>
+                            <maecBundle:Action_Collection name="Process Actions" id="Cuckoosandbox:action-a160bac7-7ec7-45bd-9ef9-08f004a2da83">
+                                <maecBundle:Action_List>
+                                    <maecBundle:Action timestamp="2015-03-06T22:02:54.064" action_status="Success" ordinal_position="2" id="Cuckoosandbox:action-e512cfcd-73f8-4468-9770-12edf9c92413">
+                                        <cybox:Name>create section</cybox:Name>
+                                        <cybox:Associated_Objects>
+                                            <cybox:Associated_Object idref="Cuckoosandbox:object-7c5d2613-a941-47c6-86f5-a44c1c0a5712">
+                                                <cybox:Association_Type xsi:type="maecVocabs:ActionObjectAssociationTypeVocab-1.0">output</cybox:Association_Type>
+                                            </cybox:Associated_Object>
+                                            <cybox:Associated_Object id="Cuckoosandbox:object-73bfa845-c789-460a-bf1d-2f275f488f3b">
+                                                <cybox:Properties xsi:type="WinHandleObj:WindowsHandleObjectType">
+                                                    <WinHandleObj:ID>0</WinHandleObj:ID>
+                                                    <WinHandleObj:Type>File</WinHandleObj:Type>
+                                                </cybox:Properties>
+                                                <cybox:Association_Type xsi:type="maecVocabs:ActionObjectAssociationTypeVocab-1.0">input</cybox:Association_Type>
+                                            </cybox:Associated_Object>
+                                        </cybox:Associated_Objects>
+                                    </maecBundle:Action>
+                                    <maecBundle:Action timestamp="2015-03-06T22:02:54.064" action_status="Success" ordinal_position="3" id="Cuckoosandbox:action-01c6669b-1c74-4cde-ba59-0b9631643a6b">
+                                        <cybox:Name>map view of section</cybox:Name>
+                                        <cybox:Action_Arguments>
+                                            <cybox:Action_Argument>
+                                                <cybox:Argument_Name>Section Offset</cybox:Argument_Name>
+                                                <cybox:Argument_Value>0x0012fa28</cybox:Argument_Value>
+                                            </cybox:Action_Argument>
+                                            <cybox:Action_Argument>
+                                                <cybox:Argument_Name xsi:type="cyboxVocabs:ActionArgumentNameVocab-1.0">Base Address</cybox:Argument_Name>
+                                                <cybox:Argument_Value>0x001e0000</cybox:Argument_Value>
+                                            </cybox:Action_Argument>
+                                        </cybox:Action_Arguments>
+                                        <cybox:Associated_Objects>
+                                            <cybox:Associated_Object idref="Cuckoosandbox:object-7c5d2613-a941-47c6-86f5-a44c1c0a5712">
+                                                <cybox:Association_Type xsi:type="maecVocabs:ActionObjectAssociationTypeVocab-1.0">input</cybox:Association_Type>
+                                            </cybox:Associated_Object>
+                                            <cybox:Associated_Object idref="Cuckoosandbox:object-13994ece-3068-4fbd-bd3f-0fbeb40344bb">
+                                                <cybox:Association_Type xsi:type="maecVocabs:ActionObjectAssociationTypeVocab-1.0">input</cybox:Association_Type>
+                                            </cybox:Associated_Object>
+                                        </cybox:Associated_Objects>
+                                    </maecBundle:Action>
+                                    <maecBundle:Action timestamp="2015-03-06T22:02:54.504" action_status="Success" ordinal_position="4" id="Cuckoosandbox:action-7ad59e02-449a-410d-94c2-1d1dfaf79257">
+                                        <cybox:Name xsi:type="maecVocabs:ProcessMemoryActionNameVocab-1.0">free process virtual memory</cybox:Name>
+                                        <cybox:Associated_Objects>
+                                            <cybox:Associated_Object idref="Cuckoosandbox:object-13994ece-3068-4fbd-bd3f-0fbeb40344bb">
+                                                <cybox:Association_Type xsi:type="maecVocabs:ActionObjectAssociationTypeVocab-1.0">input</cybox:Association_Type>
+                                            </cybox:Associated_Object>
+                                        </cybox:Associated_Objects>
+                                    </maecBundle:Action>
+                                </maecBundle:Action_List>
+                            </maecBundle:Action_Collection>
+                            <maecBundle:Action_Collection name="Network Actions" id="Cuckoosandbox:action_collection-cef960af-96e8-4211-b7ef-7bbbdb2d3622">
+                                <maecBundle:Action_List>
+                                    <maecBundle:Action id="Cuckoosandbox:action-fecd4143-cbb2-4241-aae4-7a86a2d180ce">
+                                        <cybox:Name xsi:type="maecVocabs:NetworkActionNameVocab-1.0">connect to socket address</cybox:Name>
+                                        <cybox:Associated_Objects>
+                                            <cybox:Associated_Object id="Cuckoosandbox:object-e00a8f1b-9fe4-4cf8-9782-49d05b9752b0">
+                                                <cybox:Properties xsi:type="NetworkConnectionObj:NetworkConnectionObjectType">
+                                                    <NetworkConnectionObj:Layer4_Protocol>UDP</NetworkConnectionObj:Layer4_Protocol>
+                                                    <NetworkConnectionObj:Source_Socket_Address xsi:type="SocketAddressObj:SocketAddressObjectType">
+                                                        <SocketAddressObj:IP_Address xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                                                            <AddressObj:Address_Value>192.168.56.104</AddressObj:Address_Value>
+                                                        </SocketAddressObj:IP_Address>
+                                                        <SocketAddressObj:Port xsi:type="PortObj:PortObjectType">
+                                                            <PortObj:Port_Value>137</PortObj:Port_Value>
+                                                        </SocketAddressObj:Port>
+                                                    </NetworkConnectionObj:Source_Socket_Address>
+                                                    <NetworkConnectionObj:Destination_Socket_Address xsi:type="SocketAddressObj:SocketAddressObjectType">
+                                                        <SocketAddressObj:IP_Address xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                                                            <AddressObj:Address_Value>192.168.56.255</AddressObj:Address_Value>
+                                                        </SocketAddressObj:IP_Address>
+                                                        <SocketAddressObj:Port xsi:type="PortObj:PortObjectType">
+                                                            <PortObj:Port_Value>137</PortObj:Port_Value>
+                                                        </SocketAddressObj:Port>
+                                                    </NetworkConnectionObj:Destination_Socket_Address>
+                                                </cybox:Properties>
+                                            </cybox:Associated_Object>
+                                        </cybox:Associated_Objects>
+                                    </maecBundle:Action>
+                                    <maecBundle:Action id="Cuckoosandbox:action-e9b78d9d-8a10-464c-803d-5bd2455032a9">
+                                        <cybox:Name xsi:type="maecVocabs:NetworkActionNameVocab-1.0">connect to socket address</cybox:Name>
+                                        <cybox:Associated_Objects>
+                                            <cybox:Associated_Object id="Cuckoosandbox:object-9251675c-8d68-4047-8fcb-0b439d3efab3">
+                                                <cybox:Properties xsi:type="NetworkConnectionObj:NetworkConnectionObjectType">
+                                                    <NetworkConnectionObj:Layer4_Protocol>UDP</NetworkConnectionObj:Layer4_Protocol>
+                                                    <NetworkConnectionObj:Source_Socket_Address xsi:type="SocketAddressObj:SocketAddressObjectType">
+                                                        <SocketAddressObj:IP_Address xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                                                            <AddressObj:Address_Value>192.168.56.104</AddressObj:Address_Value>
+                                                        </SocketAddressObj:IP_Address>
+                                                        <SocketAddressObj:Port xsi:type="PortObj:PortObjectType">
+                                                            <PortObj:Port_Value>51333</PortObj:Port_Value>
+                                                        </SocketAddressObj:Port>
+                                                    </NetworkConnectionObj:Source_Socket_Address>
+                                                    <NetworkConnectionObj:Destination_Socket_Address xsi:type="SocketAddressObj:SocketAddressObjectType">
+                                                        <SocketAddressObj:IP_Address xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                                                            <AddressObj:Address_Value>224.0.0.252</AddressObj:Address_Value>
+                                                        </SocketAddressObj:IP_Address>
+                                                        <SocketAddressObj:Port xsi:type="PortObj:PortObjectType">
+                                                            <PortObj:Port_Value>5355</PortObj:Port_Value>
+                                                        </SocketAddressObj:Port>
+                                                    </NetworkConnectionObj:Destination_Socket_Address>
+                                                </cybox:Properties>
+                                            </cybox:Associated_Object>
+                                        </cybox:Associated_Objects>
+                                    </maecBundle:Action>
+                                    <maecBundle:Action id="Cuckoosandbox:action-9246d9c8-820f-479f-a038-4ed7d6ff4c42">
+                                        <cybox:Name xsi:type="maecVocabs:NetworkActionNameVocab-1.0">connect to socket address</cybox:Name>
+                                        <cybox:Associated_Objects>
+                                            <cybox:Associated_Object id="Cuckoosandbox:object-42302cd5-54cc-4173-8f38-03708da31dab">
+                                                <cybox:Properties xsi:type="NetworkConnectionObj:NetworkConnectionObjectType">
+                                                    <NetworkConnectionObj:Layer4_Protocol>UDP</NetworkConnectionObj:Layer4_Protocol>
+                                                    <NetworkConnectionObj:Source_Socket_Address xsi:type="SocketAddressObj:SocketAddressObjectType">
+                                                        <SocketAddressObj:IP_Address xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                                                            <AddressObj:Address_Value>192.168.56.104</AddressObj:Address_Value>
+                                                        </SocketAddressObj:IP_Address>
+                                                        <SocketAddressObj:Port xsi:type="PortObj:PortObjectType">
+                                                            <PortObj:Port_Value>52687</PortObj:Port_Value>
+                                                        </SocketAddressObj:Port>
+                                                    </NetworkConnectionObj:Source_Socket_Address>
+                                                    <NetworkConnectionObj:Destination_Socket_Address xsi:type="SocketAddressObj:SocketAddressObjectType">
+                                                        <SocketAddressObj:IP_Address xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                                                            <AddressObj:Address_Value>224.0.0.252</AddressObj:Address_Value>
+                                                        </SocketAddressObj:IP_Address>
+                                                        <SocketAddressObj:Port xsi:type="PortObj:PortObjectType">
+                                                            <PortObj:Port_Value>5355</PortObj:Port_Value>
+                                                        </SocketAddressObj:Port>
+                                                    </NetworkConnectionObj:Destination_Socket_Address>
+                                                </cybox:Properties>
+                                            </cybox:Associated_Object>
+                                        </cybox:Associated_Objects>
+                                    </maecBundle:Action>
+                                    <maecBundle:Action id="Cuckoosandbox:action-ea625bc5-3eec-4ba9-826b-9ae678b2446e">
+                                        <cybox:Name xsi:type="maecVocabs:NetworkActionNameVocab-1.0">connect to socket address</cybox:Name>
+                                        <cybox:Associated_Objects>
+                                            <cybox:Associated_Object id="Cuckoosandbox:object-3b6cd900-e118-4a0d-8b09-61885ad69482">
+                                                <cybox:Properties xsi:type="NetworkConnectionObj:NetworkConnectionObjectType">
+                                                    <NetworkConnectionObj:Layer4_Protocol>UDP</NetworkConnectionObj:Layer4_Protocol>
+                                                    <NetworkConnectionObj:Source_Socket_Address xsi:type="SocketAddressObj:SocketAddressObjectType">
+                                                        <SocketAddressObj:IP_Address xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                                                            <AddressObj:Address_Value>192.168.56.104</AddressObj:Address_Value>
+                                                        </SocketAddressObj:IP_Address>
+                                                        <SocketAddressObj:Port xsi:type="PortObj:PortObjectType">
+                                                            <PortObj:Port_Value>55177</PortObj:Port_Value>
+                                                        </SocketAddressObj:Port>
+                                                    </NetworkConnectionObj:Source_Socket_Address>
+                                                    <NetworkConnectionObj:Destination_Socket_Address xsi:type="SocketAddressObj:SocketAddressObjectType">
+                                                        <SocketAddressObj:IP_Address xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                                                            <AddressObj:Address_Value>224.0.0.252</AddressObj:Address_Value>
+                                                        </SocketAddressObj:IP_Address>
+                                                        <SocketAddressObj:Port xsi:type="PortObj:PortObjectType">
+                                                            <PortObj:Port_Value>5355</PortObj:Port_Value>
+                                                        </SocketAddressObj:Port>
+                                                    </NetworkConnectionObj:Destination_Socket_Address>
+                                                </cybox:Properties>
+                                            </cybox:Associated_Object>
+                                        </cybox:Associated_Objects>
+                                    </maecBundle:Action>
+                                    <maecBundle:Action id="Cuckoosandbox:action-efc179ae-83c9-4f18-883e-a7890fa5604c">
+                                        <cybox:Name xsi:type="maecVocabs:NetworkActionNameVocab-1.0">connect to socket address</cybox:Name>
+                                        <cybox:Associated_Objects>
+                                            <cybox:Associated_Object id="Cuckoosandbox:object-c3e00e9e-7be8-40c9-8b3d-d4ad3cc4574d">
+                                                <cybox:Properties xsi:type="NetworkConnectionObj:NetworkConnectionObjectType">
+                                                    <NetworkConnectionObj:Layer4_Protocol>UDP</NetworkConnectionObj:Layer4_Protocol>
+                                                    <NetworkConnectionObj:Source_Socket_Address xsi:type="SocketAddressObj:SocketAddressObjectType">
+                                                        <SocketAddressObj:IP_Address xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                                                            <AddressObj:Address_Value>192.168.56.104</AddressObj:Address_Value>
+                                                        </SocketAddressObj:IP_Address>
+                                                        <SocketAddressObj:Port xsi:type="PortObj:PortObjectType">
+                                                            <PortObj:Port_Value>59031</PortObj:Port_Value>
+                                                        </SocketAddressObj:Port>
+                                                    </NetworkConnectionObj:Source_Socket_Address>
+                                                    <NetworkConnectionObj:Destination_Socket_Address xsi:type="SocketAddressObj:SocketAddressObjectType">
+                                                        <SocketAddressObj:IP_Address xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                                                            <AddressObj:Address_Value>224.0.0.252</AddressObj:Address_Value>
+                                                        </SocketAddressObj:IP_Address>
+                                                        <SocketAddressObj:Port xsi:type="PortObj:PortObjectType">
+                                                            <PortObj:Port_Value>5355</PortObj:Port_Value>
+                                                        </SocketAddressObj:Port>
+                                                    </NetworkConnectionObj:Destination_Socket_Address>
+                                                </cybox:Properties>
+                                            </cybox:Associated_Object>
+                                        </cybox:Associated_Objects>
+                                    </maecBundle:Action>
+                                    <maecBundle:Action id="Cuckoosandbox:action-1290e7af-1dd2-4ce4-a2de-0778fcc3fa8b">
+                                        <cybox:Name xsi:type="maecVocabs:NetworkActionNameVocab-1.0">connect to socket address</cybox:Name>
+                                        <cybox:Associated_Objects>
+                                            <cybox:Associated_Object id="Cuckoosandbox:object-dbca1e52-f822-460d-921c-efd4575b4fcc">
+                                                <cybox:Properties xsi:type="NetworkConnectionObj:NetworkConnectionObjectType">
+                                                    <NetworkConnectionObj:Layer4_Protocol>UDP</NetworkConnectionObj:Layer4_Protocol>
+                                                    <NetworkConnectionObj:Source_Socket_Address xsi:type="SocketAddressObj:SocketAddressObjectType">
+                                                        <SocketAddressObj:IP_Address xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                                                            <AddressObj:Address_Value>192.168.56.104</AddressObj:Address_Value>
+                                                        </SocketAddressObj:IP_Address>
+                                                        <SocketAddressObj:Port xsi:type="PortObj:PortObjectType">
+                                                            <PortObj:Port_Value>63336</PortObj:Port_Value>
+                                                        </SocketAddressObj:Port>
+                                                    </NetworkConnectionObj:Source_Socket_Address>
+                                                    <NetworkConnectionObj:Destination_Socket_Address xsi:type="SocketAddressObj:SocketAddressObjectType">
+                                                        <SocketAddressObj:IP_Address xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                                                            <AddressObj:Address_Value>224.0.0.252</AddressObj:Address_Value>
+                                                        </SocketAddressObj:IP_Address>
+                                                        <SocketAddressObj:Port xsi:type="PortObj:PortObjectType">
+                                                            <PortObj:Port_Value>5355</PortObj:Port_Value>
+                                                        </SocketAddressObj:Port>
+                                                    </NetworkConnectionObj:Destination_Socket_Address>
+                                                </cybox:Properties>
+                                            </cybox:Associated_Object>
+                                        </cybox:Associated_Objects>
+                                    </maecBundle:Action>
+                                    <maecBundle:Action id="Cuckoosandbox:action-59f6b199-9a6a-42a7-8ec8-8a897f4bf30f">
+                                        <cybox:Name xsi:type="maecVocabs:NetworkActionNameVocab-1.0">connect to socket address</cybox:Name>
+                                        <cybox:Associated_Objects>
+                                            <cybox:Associated_Object id="Cuckoosandbox:object-55fa3db0-0796-413b-9bec-7ad42311f3f6">
+                                                <cybox:Properties xsi:type="NetworkConnectionObj:NetworkConnectionObjectType">
+                                                    <NetworkConnectionObj:Layer4_Protocol>UDP</NetworkConnectionObj:Layer4_Protocol>
+                                                    <NetworkConnectionObj:Source_Socket_Address xsi:type="SocketAddressObj:SocketAddressObjectType">
+                                                        <SocketAddressObj:IP_Address xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                                                            <AddressObj:Address_Value>192.168.56.104</AddressObj:Address_Value>
+                                                        </SocketAddressObj:IP_Address>
+                                                        <SocketAddressObj:Port xsi:type="PortObj:PortObjectType">
+                                                            <PortObj:Port_Value>1900</PortObj:Port_Value>
+                                                        </SocketAddressObj:Port>
+                                                    </NetworkConnectionObj:Source_Socket_Address>
+                                                    <NetworkConnectionObj:Destination_Socket_Address xsi:type="SocketAddressObj:SocketAddressObjectType">
+                                                        <SocketAddressObj:IP_Address xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                                                            <AddressObj:Address_Value>239.255.255.250</AddressObj:Address_Value>
+                                                        </SocketAddressObj:IP_Address>
+                                                        <SocketAddressObj:Port xsi:type="PortObj:PortObjectType">
+                                                            <PortObj:Port_Value>1900</PortObj:Port_Value>
+                                                        </SocketAddressObj:Port>
+                                                    </NetworkConnectionObj:Destination_Socket_Address>
+                                                </cybox:Properties>
+                                            </cybox:Associated_Object>
+                                        </cybox:Associated_Objects>
+                                    </maecBundle:Action>
+                                    <maecBundle:Action id="Cuckoosandbox:action-52f129bb-40c9-4fd0-aa08-03436e2beab0">
+                                        <cybox:Name xsi:type="maecVocabs:NetworkActionNameVocab-1.0">connect to socket address</cybox:Name>
+                                        <cybox:Associated_Objects>
+                                            <cybox:Associated_Object id="Cuckoosandbox:object-350c03ee-8262-4405-8082-4cc13d16afcf">
+                                                <cybox:Properties xsi:type="NetworkConnectionObj:NetworkConnectionObjectType">
+                                                    <NetworkConnectionObj:Layer4_Protocol>UDP</NetworkConnectionObj:Layer4_Protocol>
+                                                    <NetworkConnectionObj:Source_Socket_Address xsi:type="SocketAddressObj:SocketAddressObjectType">
+                                                        <SocketAddressObj:IP_Address xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                                                            <AddressObj:Address_Value>192.168.56.104</AddressObj:Address_Value>
+                                                        </SocketAddressObj:IP_Address>
+                                                        <SocketAddressObj:Port xsi:type="PortObj:PortObjectType">
+                                                            <PortObj:Port_Value>49599</PortObj:Port_Value>
+                                                        </SocketAddressObj:Port>
+                                                    </NetworkConnectionObj:Source_Socket_Address>
+                                                    <NetworkConnectionObj:Destination_Socket_Address xsi:type="SocketAddressObj:SocketAddressObjectType">
+                                                        <SocketAddressObj:IP_Address xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                                                            <AddressObj:Address_Value>239.255.255.250</AddressObj:Address_Value>
+                                                        </SocketAddressObj:IP_Address>
+                                                        <SocketAddressObj:Port xsi:type="PortObj:PortObjectType">
+                                                            <PortObj:Port_Value>3702</PortObj:Port_Value>
+                                                        </SocketAddressObj:Port>
+                                                    </NetworkConnectionObj:Destination_Socket_Address>
+                                                </cybox:Properties>
+                                            </cybox:Associated_Object>
+                                        </cybox:Associated_Objects>
+                                    </maecBundle:Action>
+                                    <maecBundle:Action id="Cuckoosandbox:action-7dd904fa-8161-4052-9c29-50eede6fc0fb">
+                                        <cybox:Name xsi:type="maecVocabs:NetworkActionNameVocab-1.0">connect to socket address</cybox:Name>
+                                        <cybox:Associated_Objects>
+                                            <cybox:Associated_Object id="Cuckoosandbox:object-1862ad69-3bb8-407c-bdbd-3eef2b3e1346">
+                                                <cybox:Properties xsi:type="NetworkConnectionObj:NetworkConnectionObjectType">
+                                                    <NetworkConnectionObj:Layer4_Protocol>UDP</NetworkConnectionObj:Layer4_Protocol>
+                                                    <NetworkConnectionObj:Source_Socket_Address xsi:type="SocketAddressObj:SocketAddressObjectType">
+                                                        <SocketAddressObj:IP_Address xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                                                            <AddressObj:Address_Value>192.168.56.104</AddressObj:Address_Value>
+                                                        </SocketAddressObj:IP_Address>
+                                                        <SocketAddressObj:Port xsi:type="PortObj:PortObjectType">
+                                                            <PortObj:Port_Value>49601</PortObj:Port_Value>
+                                                        </SocketAddressObj:Port>
+                                                    </NetworkConnectionObj:Source_Socket_Address>
+                                                    <NetworkConnectionObj:Destination_Socket_Address xsi:type="SocketAddressObj:SocketAddressObjectType">
+                                                        <SocketAddressObj:IP_Address xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                                                            <AddressObj:Address_Value>239.255.255.250</AddressObj:Address_Value>
+                                                        </SocketAddressObj:IP_Address>
+                                                        <SocketAddressObj:Port xsi:type="PortObj:PortObjectType">
+                                                            <PortObj:Port_Value>3702</PortObj:Port_Value>
+                                                        </SocketAddressObj:Port>
+                                                    </NetworkConnectionObj:Destination_Socket_Address>
+                                                </cybox:Properties>
+                                            </cybox:Associated_Object>
+                                        </cybox:Associated_Objects>
+                                    </maecBundle:Action>
+                                    <maecBundle:Action id="Cuckoosandbox:action-ce63b1f9-07a0-4585-9cc2-90f57c4388dd">
+                                        <cybox:Name xsi:type="maecVocabs:NetworkActionNameVocab-1.0">connect to socket address</cybox:Name>
+                                        <cybox:Associated_Objects>
+                                            <cybox:Associated_Object id="Cuckoosandbox:object-093a7b7e-af0d-4eb8-aa2a-12da06c71b33">
+                                                <cybox:Properties xsi:type="NetworkConnectionObj:NetworkConnectionObjectType">
+                                                    <NetworkConnectionObj:Layer4_Protocol>UDP</NetworkConnectionObj:Layer4_Protocol>
+                                                    <NetworkConnectionObj:Source_Socket_Address xsi:type="SocketAddressObj:SocketAddressObjectType">
+                                                        <SocketAddressObj:IP_Address xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                                                            <AddressObj:Address_Value>192.168.56.104</AddressObj:Address_Value>
+                                                        </SocketAddressObj:IP_Address>
+                                                        <SocketAddressObj:Port xsi:type="PortObj:PortObjectType">
+                                                            <PortObj:Port_Value>49603</PortObj:Port_Value>
+                                                        </SocketAddressObj:Port>
+                                                    </NetworkConnectionObj:Source_Socket_Address>
+                                                    <NetworkConnectionObj:Destination_Socket_Address xsi:type="SocketAddressObj:SocketAddressObjectType">
+                                                        <SocketAddressObj:IP_Address xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                                                            <AddressObj:Address_Value>239.255.255.250</AddressObj:Address_Value>
+                                                        </SocketAddressObj:IP_Address>
+                                                        <SocketAddressObj:Port xsi:type="PortObj:PortObjectType">
+                                                            <PortObj:Port_Value>3702</PortObj:Port_Value>
+                                                        </SocketAddressObj:Port>
+                                                    </NetworkConnectionObj:Destination_Socket_Address>
+                                                </cybox:Properties>
+                                            </cybox:Associated_Object>
+                                        </cybox:Associated_Objects>
+                                    </maecBundle:Action>
+                                    <maecBundle:Action id="Cuckoosandbox:action-33e760a8-208e-4cbe-b7f5-7ac7accbfeef">
+                                        <cybox:Name xsi:type="maecVocabs:NetworkActionNameVocab-1.0">connect to socket address</cybox:Name>
+                                        <cybox:Associated_Objects>
+                                            <cybox:Associated_Object id="Cuckoosandbox:object-195fd8f8-93ea-4182-a1e7-df3e4878cc75">
+                                                <cybox:Properties xsi:type="NetworkConnectionObj:NetworkConnectionObjectType">
+                                                    <NetworkConnectionObj:Layer4_Protocol>UDP</NetworkConnectionObj:Layer4_Protocol>
+                                                    <NetworkConnectionObj:Source_Socket_Address xsi:type="SocketAddressObj:SocketAddressObjectType">
+                                                        <SocketAddressObj:IP_Address xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                                                            <AddressObj:Address_Value>192.168.56.104</AddressObj:Address_Value>
+                                                        </SocketAddressObj:IP_Address>
+                                                        <SocketAddressObj:Port xsi:type="PortObj:PortObjectType">
+                                                            <PortObj:Port_Value>51151</PortObj:Port_Value>
+                                                        </SocketAddressObj:Port>
+                                                    </NetworkConnectionObj:Source_Socket_Address>
+                                                    <NetworkConnectionObj:Destination_Socket_Address xsi:type="SocketAddressObj:SocketAddressObjectType">
+                                                        <SocketAddressObj:IP_Address xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                                                            <AddressObj:Address_Value>239.255.255.250</AddressObj:Address_Value>
+                                                        </SocketAddressObj:IP_Address>
+                                                        <SocketAddressObj:Port xsi:type="PortObj:PortObjectType">
+                                                            <PortObj:Port_Value>3702</PortObj:Port_Value>
+                                                        </SocketAddressObj:Port>
+                                                    </NetworkConnectionObj:Destination_Socket_Address>
+                                                </cybox:Properties>
+                                            </cybox:Associated_Object>
+                                        </cybox:Associated_Objects>
+                                    </maecBundle:Action>
+                                    <maecBundle:Action id="Cuckoosandbox:action-6b249b9a-54f6-4354-a5d0-6a034cbcab20">
+                                        <cybox:Name xsi:type="maecVocabs:NetworkActionNameVocab-1.0">connect to socket address</cybox:Name>
+                                        <cybox:Associated_Objects>
+                                            <cybox:Associated_Object id="Cuckoosandbox:object-ac9b003e-4caf-41a4-a4b2-a59eccbdc2f8">
+                                                <cybox:Properties xsi:type="NetworkConnectionObj:NetworkConnectionObjectType">
+                                                    <NetworkConnectionObj:Layer4_Protocol>UDP</NetworkConnectionObj:Layer4_Protocol>
+                                                    <NetworkConnectionObj:Source_Socket_Address xsi:type="SocketAddressObj:SocketAddressObjectType">
+                                                        <SocketAddressObj:IP_Address xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                                                            <AddressObj:Address_Value>192.168.56.104</AddressObj:Address_Value>
+                                                        </SocketAddressObj:IP_Address>
+                                                        <SocketAddressObj:Port xsi:type="PortObj:PortObjectType">
+                                                            <PortObj:Port_Value>51336</PortObj:Port_Value>
+                                                        </SocketAddressObj:Port>
+                                                    </NetworkConnectionObj:Source_Socket_Address>
+                                                    <NetworkConnectionObj:Destination_Socket_Address xsi:type="SocketAddressObj:SocketAddressObjectType">
+                                                        <SocketAddressObj:IP_Address xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                                                            <AddressObj:Address_Value>239.255.255.250</AddressObj:Address_Value>
+                                                        </SocketAddressObj:IP_Address>
+                                                        <SocketAddressObj:Port xsi:type="PortObj:PortObjectType">
+                                                            <PortObj:Port_Value>1900</PortObj:Port_Value>
+                                                        </SocketAddressObj:Port>
+                                                    </NetworkConnectionObj:Destination_Socket_Address>
+                                                </cybox:Properties>
+                                            </cybox:Associated_Object>
+                                        </cybox:Associated_Objects>
+                                    </maecBundle:Action>
+                                    <maecBundle:Action id="Cuckoosandbox:action-45fefaea-3965-4b76-a142-345e11841fe7">
+                                        <cybox:Name xsi:type="maecVocabs:NetworkActionNameVocab-1.0">connect to socket address</cybox:Name>
+                                        <cybox:Associated_Objects>
+                                            <cybox:Associated_Object id="Cuckoosandbox:object-80b313a6-178c-4ba3-8b56-c3cf71675038">
+                                                <cybox:Properties xsi:type="NetworkConnectionObj:NetworkConnectionObjectType">
+                                                    <NetworkConnectionObj:Layer4_Protocol>UDP</NetworkConnectionObj:Layer4_Protocol>
+                                                    <NetworkConnectionObj:Source_Socket_Address xsi:type="SocketAddressObj:SocketAddressObjectType">
+                                                        <SocketAddressObj:IP_Address xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                                                            <AddressObj:Address_Value>192.168.56.104</AddressObj:Address_Value>
+                                                        </SocketAddressObj:IP_Address>
+                                                        <SocketAddressObj:Port xsi:type="PortObj:PortObjectType">
+                                                            <PortObj:Port_Value>53948</PortObj:Port_Value>
+                                                        </SocketAddressObj:Port>
+                                                    </NetworkConnectionObj:Source_Socket_Address>
+                                                    <NetworkConnectionObj:Destination_Socket_Address xsi:type="SocketAddressObj:SocketAddressObjectType">
+                                                        <SocketAddressObj:IP_Address xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                                                            <AddressObj:Address_Value>239.255.255.250</AddressObj:Address_Value>
+                                                        </SocketAddressObj:IP_Address>
+                                                        <SocketAddressObj:Port xsi:type="PortObj:PortObjectType">
+                                                            <PortObj:Port_Value>3702</PortObj:Port_Value>
+                                                        </SocketAddressObj:Port>
+                                                    </NetworkConnectionObj:Destination_Socket_Address>
+                                                </cybox:Properties>
+                                            </cybox:Associated_Object>
+                                        </cybox:Associated_Objects>
+                                    </maecBundle:Action>
+                                    <maecBundle:Action id="Cuckoosandbox:action-e20afdb4-c00a-4c32-a5cc-377f15b32093">
+                                        <cybox:Name xsi:type="maecVocabs:NetworkActionNameVocab-1.0">connect to socket address</cybox:Name>
+                                        <cybox:Associated_Objects>
+                                            <cybox:Associated_Object id="Cuckoosandbox:object-9c29fd26-e00c-43f7-b02d-fd9cae949883">
+                                                <cybox:Properties xsi:type="NetworkConnectionObj:NetworkConnectionObjectType">
+                                                    <NetworkConnectionObj:Layer4_Protocol>UDP</NetworkConnectionObj:Layer4_Protocol>
+                                                    <NetworkConnectionObj:Source_Socket_Address xsi:type="SocketAddressObj:SocketAddressObjectType">
+                                                        <SocketAddressObj:IP_Address xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                                                            <AddressObj:Address_Value>192.168.56.104</AddressObj:Address_Value>
+                                                        </SocketAddressObj:IP_Address>
+                                                        <SocketAddressObj:Port xsi:type="PortObj:PortObjectType">
+                                                            <PortObj:Port_Value>55911</PortObj:Port_Value>
+                                                        </SocketAddressObj:Port>
+                                                    </NetworkConnectionObj:Source_Socket_Address>
+                                                    <NetworkConnectionObj:Destination_Socket_Address xsi:type="SocketAddressObj:SocketAddressObjectType">
+                                                        <SocketAddressObj:IP_Address xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                                                            <AddressObj:Address_Value>239.255.255.250</AddressObj:Address_Value>
+                                                        </SocketAddressObj:IP_Address>
+                                                        <SocketAddressObj:Port xsi:type="PortObj:PortObjectType">
+                                                            <PortObj:Port_Value>3702</PortObj:Port_Value>
+                                                        </SocketAddressObj:Port>
+                                                    </NetworkConnectionObj:Destination_Socket_Address>
+                                                </cybox:Properties>
+                                            </cybox:Associated_Object>
+                                        </cybox:Associated_Objects>
+                                    </maecBundle:Action>
+                                    <maecBundle:Action id="Cuckoosandbox:action-026bf17b-0712-4c59-8ea7-8abac4e02d68">
+                                        <cybox:Name xsi:type="maecVocabs:NetworkActionNameVocab-1.0">connect to socket address</cybox:Name>
+                                        <cybox:Associated_Objects>
+                                            <cybox:Associated_Object id="Cuckoosandbox:object-03c9bf54-2aba-4a91-a6dd-3af73f4cbf77">
+                                                <cybox:Properties xsi:type="NetworkConnectionObj:NetworkConnectionObjectType">
+                                                    <NetworkConnectionObj:Layer4_Protocol>UDP</NetworkConnectionObj:Layer4_Protocol>
+                                                    <NetworkConnectionObj:Source_Socket_Address xsi:type="SocketAddressObj:SocketAddressObjectType">
+                                                        <SocketAddressObj:IP_Address xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                                                            <AddressObj:Address_Value>192.168.56.104</AddressObj:Address_Value>
+                                                        </SocketAddressObj:IP_Address>
+                                                        <SocketAddressObj:Port xsi:type="PortObj:PortObjectType">
+                                                            <PortObj:Port_Value>60300</PortObj:Port_Value>
+                                                        </SocketAddressObj:Port>
+                                                    </NetworkConnectionObj:Source_Socket_Address>
+                                                    <NetworkConnectionObj:Destination_Socket_Address xsi:type="SocketAddressObj:SocketAddressObjectType">
+                                                        <SocketAddressObj:IP_Address xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                                                            <AddressObj:Address_Value>239.255.255.250</AddressObj:Address_Value>
+                                                        </SocketAddressObj:IP_Address>
+                                                        <SocketAddressObj:Port xsi:type="PortObj:PortObjectType">
+                                                            <PortObj:Port_Value>3702</PortObj:Port_Value>
+                                                        </SocketAddressObj:Port>
+                                                    </NetworkConnectionObj:Destination_Socket_Address>
+                                                </cybox:Properties>
+                                            </cybox:Associated_Object>
+                                        </cybox:Associated_Objects>
+                                    </maecBundle:Action>
+                                    <maecBundle:Action id="Cuckoosandbox:action-d2012816-0953-432c-8106-582dbe8abc90">
+                                        <cybox:Name xsi:type="maecVocabs:NetworkActionNameVocab-1.0">connect to socket address</cybox:Name>
+                                        <cybox:Associated_Objects>
+                                            <cybox:Associated_Object id="Cuckoosandbox:object-ac56e1b0-7f20-4df8-9843-61b6c0ee58fb">
+                                                <cybox:Properties xsi:type="NetworkConnectionObj:NetworkConnectionObjectType">
+                                                    <NetworkConnectionObj:Layer4_Protocol>UDP</NetworkConnectionObj:Layer4_Protocol>
+                                                    <NetworkConnectionObj:Source_Socket_Address xsi:type="SocketAddressObj:SocketAddressObjectType">
+                                                        <SocketAddressObj:IP_Address xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                                                            <AddressObj:Address_Value>192.168.56.104</AddressObj:Address_Value>
+                                                        </SocketAddressObj:IP_Address>
+                                                        <SocketAddressObj:Port xsi:type="PortObj:PortObjectType">
+                                                            <PortObj:Port_Value>49598</PortObj:Port_Value>
+                                                        </SocketAddressObj:Port>
+                                                    </NetworkConnectionObj:Source_Socket_Address>
+                                                    <NetworkConnectionObj:Destination_Socket_Address xsi:type="SocketAddressObj:SocketAddressObjectType">
+                                                        <SocketAddressObj:IP_Address xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                                                            <AddressObj:Address_Value>8.8.8.8</AddressObj:Address_Value>
+                                                        </SocketAddressObj:IP_Address>
+                                                        <SocketAddressObj:Port xsi:type="PortObj:PortObjectType">
+                                                            <PortObj:Port_Value>53</PortObj:Port_Value>
+                                                        </SocketAddressObj:Port>
+                                                    </NetworkConnectionObj:Destination_Socket_Address>
+                                                </cybox:Properties>
+                                            </cybox:Associated_Object>
+                                        </cybox:Associated_Objects>
+                                    </maecBundle:Action>
+                                    <maecBundle:Action id="Cuckoosandbox:action-d5c55670-8a5c-4827-bcaa-4ae5f43da0a7">
+                                        <cybox:Name xsi:type="maecVocabs:NetworkActionNameVocab-1.0">connect to socket address</cybox:Name>
+                                        <cybox:Associated_Objects>
+                                            <cybox:Associated_Object id="Cuckoosandbox:object-2b9735fa-e3df-4a03-b487-7af11fb75dac">
+                                                <cybox:Properties xsi:type="NetworkConnectionObj:NetworkConnectionObjectType">
+                                                    <NetworkConnectionObj:Layer4_Protocol>UDP</NetworkConnectionObj:Layer4_Protocol>
+                                                    <NetworkConnectionObj:Source_Socket_Address xsi:type="SocketAddressObj:SocketAddressObjectType">
+                                                        <SocketAddressObj:IP_Address xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                                                            <AddressObj:Address_Value>192.168.56.104</AddressObj:Address_Value>
+                                                        </SocketAddressObj:IP_Address>
+                                                        <SocketAddressObj:Port xsi:type="PortObj:PortObjectType">
+                                                            <PortObj:Port_Value>51150</PortObj:Port_Value>
+                                                        </SocketAddressObj:Port>
+                                                    </NetworkConnectionObj:Source_Socket_Address>
+                                                    <NetworkConnectionObj:Destination_Socket_Address xsi:type="SocketAddressObj:SocketAddressObjectType">
+                                                        <SocketAddressObj:IP_Address xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                                                            <AddressObj:Address_Value>8.8.8.8</AddressObj:Address_Value>
+                                                        </SocketAddressObj:IP_Address>
+                                                        <SocketAddressObj:Port xsi:type="PortObj:PortObjectType">
+                                                            <PortObj:Port_Value>53</PortObj:Port_Value>
+                                                        </SocketAddressObj:Port>
+                                                    </NetworkConnectionObj:Destination_Socket_Address>
+                                                </cybox:Properties>
+                                            </cybox:Associated_Object>
+                                        </cybox:Associated_Objects>
+                                    </maecBundle:Action>
+                                    <maecBundle:Action id="Cuckoosandbox:action-bd0c03b7-4acf-402f-b77b-e4233d9402e0">
+                                        <cybox:Name xsi:type="maecVocabs:NetworkActionNameVocab-1.0">connect to socket address</cybox:Name>
+                                        <cybox:Associated_Objects>
+                                            <cybox:Associated_Object id="Cuckoosandbox:object-f3806189-3155-4359-a0f4-1ae1bdca74f2">
+                                                <cybox:Properties xsi:type="NetworkConnectionObj:NetworkConnectionObjectType">
+                                                    <NetworkConnectionObj:Layer4_Protocol>UDP</NetworkConnectionObj:Layer4_Protocol>
+                                                    <NetworkConnectionObj:Source_Socket_Address xsi:type="SocketAddressObj:SocketAddressObjectType">
+                                                        <SocketAddressObj:IP_Address xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                                                            <AddressObj:Address_Value>192.168.56.104</AddressObj:Address_Value>
+                                                        </SocketAddressObj:IP_Address>
+                                                        <SocketAddressObj:Port xsi:type="PortObj:PortObjectType">
+                                                            <PortObj:Port_Value>52560</PortObj:Port_Value>
+                                                        </SocketAddressObj:Port>
+                                                    </NetworkConnectionObj:Source_Socket_Address>
+                                                    <NetworkConnectionObj:Destination_Socket_Address xsi:type="SocketAddressObj:SocketAddressObjectType">
+                                                        <SocketAddressObj:IP_Address xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                                                            <AddressObj:Address_Value>8.8.8.8</AddressObj:Address_Value>
+                                                        </SocketAddressObj:IP_Address>
+                                                        <SocketAddressObj:Port xsi:type="PortObj:PortObjectType">
+                                                            <PortObj:Port_Value>53</PortObj:Port_Value>
+                                                        </SocketAddressObj:Port>
+                                                    </NetworkConnectionObj:Destination_Socket_Address>
+                                                </cybox:Properties>
+                                            </cybox:Associated_Object>
+                                        </cybox:Associated_Objects>
+                                    </maecBundle:Action>
+                                    <maecBundle:Action id="Cuckoosandbox:action-3b67f6a9-a3f1-463c-91e0-03c3dd22ec48">
+                                        <cybox:Name xsi:type="maecVocabs:NetworkActionNameVocab-1.0">connect to socket address</cybox:Name>
+                                        <cybox:Associated_Objects>
+                                            <cybox:Associated_Object id="Cuckoosandbox:object-cff9eda2-92b8-4f43-8974-f64c73821af6">
+                                                <cybox:Properties xsi:type="NetworkConnectionObj:NetworkConnectionObjectType">
+                                                    <NetworkConnectionObj:Layer4_Protocol>UDP</NetworkConnectionObj:Layer4_Protocol>
+                                                    <NetworkConnectionObj:Source_Socket_Address xsi:type="SocketAddressObj:SocketAddressObjectType">
+                                                        <SocketAddressObj:IP_Address xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                                                            <AddressObj:Address_Value>192.168.56.104</AddressObj:Address_Value>
+                                                        </SocketAddressObj:IP_Address>
+                                                        <SocketAddressObj:Port xsi:type="PortObj:PortObjectType">
+                                                            <PortObj:Port_Value>53947</PortObj:Port_Value>
+                                                        </SocketAddressObj:Port>
+                                                    </NetworkConnectionObj:Source_Socket_Address>
+                                                    <NetworkConnectionObj:Destination_Socket_Address xsi:type="SocketAddressObj:SocketAddressObjectType">
+                                                        <SocketAddressObj:IP_Address xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                                                            <AddressObj:Address_Value>8.8.8.8</AddressObj:Address_Value>
+                                                        </SocketAddressObj:IP_Address>
+                                                        <SocketAddressObj:Port xsi:type="PortObj:PortObjectType">
+                                                            <PortObj:Port_Value>53</PortObj:Port_Value>
+                                                        </SocketAddressObj:Port>
+                                                    </NetworkConnectionObj:Destination_Socket_Address>
+                                                </cybox:Properties>
+                                            </cybox:Associated_Object>
+                                        </cybox:Associated_Objects>
+                                    </maecBundle:Action>
+                                    <maecBundle:Action id="Cuckoosandbox:action-77bc1939-c25c-41b2-b03a-df5175dd4193">
+                                        <cybox:Name xsi:type="maecVocabs:NetworkActionNameVocab-1.0">connect to socket address</cybox:Name>
+                                        <cybox:Associated_Objects>
+                                            <cybox:Associated_Object id="Cuckoosandbox:object-e778be12-5e06-4d8f-a534-f9f59772bcea">
+                                                <cybox:Properties xsi:type="NetworkConnectionObj:NetworkConnectionObjectType">
+                                                    <NetworkConnectionObj:Layer4_Protocol>UDP</NetworkConnectionObj:Layer4_Protocol>
+                                                    <NetworkConnectionObj:Source_Socket_Address xsi:type="SocketAddressObj:SocketAddressObjectType">
+                                                        <SocketAddressObj:IP_Address xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                                                            <AddressObj:Address_Value>192.168.56.104</AddressObj:Address_Value>
+                                                        </SocketAddressObj:IP_Address>
+                                                        <SocketAddressObj:Port xsi:type="PortObj:PortObjectType">
+                                                            <PortObj:Port_Value>55537</PortObj:Port_Value>
+                                                        </SocketAddressObj:Port>
+                                                    </NetworkConnectionObj:Source_Socket_Address>
+                                                    <NetworkConnectionObj:Destination_Socket_Address xsi:type="SocketAddressObj:SocketAddressObjectType">
+                                                        <SocketAddressObj:IP_Address xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                                                            <AddressObj:Address_Value>8.8.8.8</AddressObj:Address_Value>
+                                                        </SocketAddressObj:IP_Address>
+                                                        <SocketAddressObj:Port xsi:type="PortObj:PortObjectType">
+                                                            <PortObj:Port_Value>53</PortObj:Port_Value>
+                                                        </SocketAddressObj:Port>
+                                                    </NetworkConnectionObj:Destination_Socket_Address>
+                                                </cybox:Properties>
+                                            </cybox:Associated_Object>
+                                        </cybox:Associated_Objects>
+                                    </maecBundle:Action>
+                                    <maecBundle:Action id="Cuckoosandbox:action-680baa6d-df17-47c6-8b6b-b8838c533592">
+                                        <cybox:Name xsi:type="maecVocabs:NetworkActionNameVocab-1.0">connect to socket address</cybox:Name>
+                                        <cybox:Associated_Objects>
+                                            <cybox:Associated_Object id="Cuckoosandbox:object-a1838223-4219-4f2f-97fb-1f771b18a671">
+                                                <cybox:Properties xsi:type="NetworkConnectionObj:NetworkConnectionObjectType">
+                                                    <NetworkConnectionObj:Layer4_Protocol>UDP</NetworkConnectionObj:Layer4_Protocol>
+                                                    <NetworkConnectionObj:Source_Socket_Address xsi:type="SocketAddressObj:SocketAddressObjectType">
+                                                        <SocketAddressObj:IP_Address xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                                                            <AddressObj:Address_Value>192.168.56.104</AddressObj:Address_Value>
+                                                        </SocketAddressObj:IP_Address>
+                                                        <SocketAddressObj:Port xsi:type="PortObj:PortObjectType">
+                                                            <PortObj:Port_Value>60299</PortObj:Port_Value>
+                                                        </SocketAddressObj:Port>
+                                                    </NetworkConnectionObj:Source_Socket_Address>
+                                                    <NetworkConnectionObj:Destination_Socket_Address xsi:type="SocketAddressObj:SocketAddressObjectType">
+                                                        <SocketAddressObj:IP_Address xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                                                            <AddressObj:Address_Value>8.8.8.8</AddressObj:Address_Value>
+                                                        </SocketAddressObj:IP_Address>
+                                                        <SocketAddressObj:Port xsi:type="PortObj:PortObjectType">
+                                                            <PortObj:Port_Value>53</PortObj:Port_Value>
+                                                        </SocketAddressObj:Port>
+                                                    </NetworkConnectionObj:Destination_Socket_Address>
+                                                </cybox:Properties>
+                                            </cybox:Associated_Object>
+                                        </cybox:Associated_Objects>
+                                    </maecBundle:Action>
+                                    <maecBundle:Action id="Cuckoosandbox:action-b6185ea4-7e9f-408c-a6e0-123dd2e4cd0a">
+                                        <cybox:Name xsi:type="maecVocabs:DNSActionNameVocab-1.0">send dns query</cybox:Name>
+                                        <cybox:Associated_Objects>
+                                            <cybox:Associated_Object idref="Cuckoosandbox:object-47ee136c-ddc5-4707-9445-adaa05a9b86a"/>
+                                        </cybox:Associated_Objects>
+                                    </maecBundle:Action>
+                                    <maecBundle:Action id="Cuckoosandbox:action-28afc490-bfc6-4b6e-852f-4ae59598233c">
+                                        <cybox:Name xsi:type="maecVocabs:DNSActionNameVocab-1.0">send dns query</cybox:Name>
+                                        <cybox:Associated_Objects>
+                                            <cybox:Associated_Object idref="Cuckoosandbox:object-47ee136c-ddc5-4707-9445-adaa05a9b86a"/>
+                                        </cybox:Associated_Objects>
+                                    </maecBundle:Action>
+                                    <maecBundle:Action id="Cuckoosandbox:action-2d302f0b-db40-44ea-94e5-2f3eeec7db3b">
+                                        <cybox:Name xsi:type="maecVocabs:DNSActionNameVocab-1.0">send dns query</cybox:Name>
+                                        <cybox:Associated_Objects>
+                                            <cybox:Associated_Object idref="Cuckoosandbox:object-47ee136c-ddc5-4707-9445-adaa05a9b86a"/>
+                                        </cybox:Associated_Objects>
+                                    </maecBundle:Action>
+                                </maecBundle:Action_List>
+                            </maecBundle:Action_Collection>
+                        </maecBundle:Action_Collections>
+                        <maecBundle:Object_Collections>
+                            <maecBundle:Object_Collection name="Dropped Files" id="Cuckoosandbox:object-b8c8cf0a-00b6-4e53-9b83-7befe14d9997">
+                                <maecBundle:Object_List>
+                                    <maecBundle:Object id="Cuckoosandbox:object-02e2611d-a4fa-469f-aab0-7396e9a0bea1">
+                                        <cybox:Properties xsi:type="FileObj:FileObjectType">
+                                            <FileObj:File_Name>Trojan-Downloader.Win32.Swizzor.gn</FileObj:File_Name>
+                                            <FileObj:File_Path>/Users/ptrac3/cuckoo/storage/binaries/fc2eed4afb048c8c41c811a62c956ed1bbc3d61e65187fae21539ac86e36ad2a</FileObj:File_Path>
+                                            <FileObj:Size_In_Bytes>14336</FileObj:Size_In_Bytes>
+                                            <FileObj:File_Format>PE32 executable for MS Windows (GUI) Intel 80386 32-bit</FileObj:File_Format>
+                                            <FileObj:Hashes>
+                                                <cyboxCommon:Hash>
+                                                    <cyboxCommon:Type>MD5</cyboxCommon:Type>
+                                                    <cyboxCommon:Simple_Hash_Value>d8c23aad292b7e8b3a0458b7c366d13c</cyboxCommon:Simple_Hash_Value>
+                                                </cyboxCommon:Hash>
+                                                <cyboxCommon:Hash>
+                                                    <cyboxCommon:Type>SHA1</cyboxCommon:Type>
+                                                    <cyboxCommon:Simple_Hash_Value>edb360751ff9c175ef5c8aabd4708847e5ea265c</cyboxCommon:Simple_Hash_Value>
+                                                </cyboxCommon:Hash>
+                                                <cyboxCommon:Hash>
+                                                    <cyboxCommon:Type>SHA256</cyboxCommon:Type>
+                                                    <cyboxCommon:Simple_Hash_Value>fc2eed4afb048c8c41c811a62c956ed1bbc3d61e65187fae21539ac86e36ad2a</cyboxCommon:Simple_Hash_Value>
+                                                </cyboxCommon:Hash>
+                                                <cyboxCommon:Hash>
+                                                    <cyboxCommon:Type>SHA512</cyboxCommon:Type>
+                                                    <cyboxCommon:Simple_Hash_Value>74f7a850fcb72eda1b2d7677c9fdad7e2bb5189b24169b2514894fa43d3eaea967f66a67ad49dd744b3d2c608a28d643122f5707b73c8ed8c727bb461c5e5679</cyboxCommon:Simple_Hash_Value>
+                                                </cyboxCommon:Hash>
+                                                <cyboxCommon:Hash>
+                                                    <cyboxCommon:Type>SSDEEP</cyboxCommon:Type>
+                                                    <cyboxCommon:Fuzzy_Hash_Value>384:cmU6d4LWWdeVa9BNDHnbJlfnUe26j4LAi:5U6mPeu12g</cyboxCommon:Fuzzy_Hash_Value>
+                                                </cyboxCommon:Hash>
+                                            </FileObj:Hashes>
+                                        </cybox:Properties>
+                                    </maecBundle:Object>
+                                </maecBundle:Object_List>
+                            </maecBundle:Object_Collection>
+                            <maecBundle:Object_Collection name="Deduplicated Objects" id="maec-a26d1de6-objc-3">
+                                <maecBundle:Object_List>
+                                    <maecBundle:Object id="Cuckoosandbox:object-7c5d2613-a941-47c6-86f5-a44c1c0a5712">
+                                        <cybox:Properties xsi:type="WinHandleObj:WindowsHandleObjectType">
+                                            <WinHandleObj:ID>120</WinHandleObj:ID>
+                                            <WinHandleObj:Type>Section</WinHandleObj:Type>
+                                        </cybox:Properties>
+                                    </maecBundle:Object>
+                                    <maecBundle:Object id="Cuckoosandbox:object-47ee136c-ddc5-4707-9445-adaa05a9b86a">
+                                        <cybox:Properties xsi:type="NetworkConnectionObj:NetworkConnectionObjectType">
+                                            <NetworkConnectionObj:Layer4_Protocol>UDP</NetworkConnectionObj:Layer4_Protocol>
+                                            <NetworkConnectionObj:Layer7_Protocol>DNS</NetworkConnectionObj:Layer7_Protocol>
+                                            <NetworkConnectionObj:Layer7_Connections/>
+                                        </cybox:Properties>
+                                    </maecBundle:Object>
+                                    <maecBundle:Object id="Cuckoosandbox:object-13994ece-3068-4fbd-bd3f-0fbeb40344bb">
+                                        <cybox:Properties xsi:type="WinHandleObj:WindowsHandleObjectType">
+                                            <WinHandleObj:ID>4294967295</WinHandleObj:ID>
+                                            <WinHandleObj:Type>Process</WinHandleObj:Type>
+                                        </cybox:Properties>
+                                    </maecBundle:Object>
+                                </maecBundle:Object_List>
+                            </maecBundle:Object_Collection>
+                        </maecBundle:Object_Collections>
+                    </maecBundle:Collections>
+                </maecPackage:Bundle>
+                <maecPackage:Bundle defined_subject="false" content_type="static analysis tool output" id="Cuckoosandbox:bundle-49fe9338-7ff8-4375-8c6c-eeb80747437d" schema_version="4.1">
+                    <maecBundle:Objects>
+                        <maecBundle:Object id="Cuckoosandbox:object-3bc887a4-fed6-499c-ac74-e34ad969b38f">
+                            <cybox:Properties xsi:type="WinExecutableFileObj:WindowsExecutableFileObjectType">
+                                <WinExecutableFileObj:Imports>
+                                    <WinExecutableFileObj:Import>
+                                        <WinExecutableFileObj:File_Name>kernel32.dll</WinExecutableFileObj:File_Name>
+                                        <WinExecutableFileObj:Imported_Functions>
+                                            <WinExecutableFileObj:Imported_Function>
+                                                <WinExecutableFileObj:Function_Name>MoveFileWithProgressW</WinExecutableFileObj:Function_Name>
+                                                <WinExecutableFileObj:Virtual_Address>0x40b0ac</WinExecutableFileObj:Virtual_Address>
+                                            </WinExecutableFileObj:Imported_Function>
+                                            <WinExecutableFileObj:Imported_Function>
+                                                <WinExecutableFileObj:Function_Name>ScrollConsoleScreenBufferW</WinExecutableFileObj:Function_Name>
+                                                <WinExecutableFileObj:Virtual_Address>0x40b0b0</WinExecutableFileObj:Virtual_Address>
+                                            </WinExecutableFileObj:Imported_Function>
+                                            <WinExecutableFileObj:Imported_Function>
+                                                <WinExecutableFileObj:Function_Name>GetConsoleAliasExesLengthA</WinExecutableFileObj:Function_Name>
+                                                <WinExecutableFileObj:Virtual_Address>0x40b0b4</WinExecutableFileObj:Virtual_Address>
+                                            </WinExecutableFileObj:Imported_Function>
+                                            <WinExecutableFileObj:Imported_Function>
+                                                <WinExecutableFileObj:Function_Name>GetConsoleAliasesLengthA</WinExecutableFileObj:Function_Name>
+                                                <WinExecutableFileObj:Virtual_Address>0x40b0b8</WinExecutableFileObj:Virtual_Address>
+                                            </WinExecutableFileObj:Imported_Function>
+                                            <WinExecutableFileObj:Imported_Function>
+                                                <WinExecutableFileObj:Function_Name>ReadConsoleInputA</WinExecutableFileObj:Function_Name>
+                                                <WinExecutableFileObj:Virtual_Address>0x40b0bc</WinExecutableFileObj:Virtual_Address>
+                                            </WinExecutableFileObj:Imported_Function>
+                                            <WinExecutableFileObj:Imported_Function>
+                                                <WinExecutableFileObj:Function_Name>GetDiskFreeSpaceExA</WinExecutableFileObj:Function_Name>
+                                                <WinExecutableFileObj:Virtual_Address>0x40b0c0</WinExecutableFileObj:Virtual_Address>
+                                            </WinExecutableFileObj:Imported_Function>
+                                            <WinExecutableFileObj:Imported_Function>
+                                                <WinExecutableFileObj:Function_Name>SetConsoleNumberOfCommandsW</WinExecutableFileObj:Function_Name>
+                                                <WinExecutableFileObj:Virtual_Address>0x40b0c4</WinExecutableFileObj:Virtual_Address>
+                                            </WinExecutableFileObj:Imported_Function>
+                                            <WinExecutableFileObj:Imported_Function>
+                                                <WinExecutableFileObj:Function_Name>GetCommandLineW</WinExecutableFileObj:Function_Name>
+                                                <WinExecutableFileObj:Virtual_Address>0x40b0c8</WinExecutableFileObj:Virtual_Address>
+                                            </WinExecutableFileObj:Imported_Function>
+                                            <WinExecutableFileObj:Imported_Function>
+                                                <WinExecutableFileObj:Function_Name>WriteConsoleOutputCharacterW</WinExecutableFileObj:Function_Name>
+                                                <WinExecutableFileObj:Virtual_Address>0x40b0cc</WinExecutableFileObj:Virtual_Address>
+                                            </WinExecutableFileObj:Imported_Function>
+                                            <WinExecutableFileObj:Imported_Function>
+                                                <WinExecutableFileObj:Function_Name>GetFileAttributesExW</WinExecutableFileObj:Function_Name>
+                                                <WinExecutableFileObj:Virtual_Address>0x40b0d0</WinExecutableFileObj:Virtual_Address>
+                                            </WinExecutableFileObj:Imported_Function>
+                                            <WinExecutableFileObj:Imported_Function>
+                                                <WinExecutableFileObj:Function_Name>EnumSystemLocalesW</WinExecutableFileObj:Function_Name>
+                                                <WinExecutableFileObj:Virtual_Address>0x40b0d4</WinExecutableFileObj:Virtual_Address>
+                                            </WinExecutableFileObj:Imported_Function>
+                                            <WinExecutableFileObj:Imported_Function>
+                                                <WinExecutableFileObj:Function_Name>GetCommandLineW</WinExecutableFileObj:Function_Name>
+                                                <WinExecutableFileObj:Virtual_Address>0x40b0d8</WinExecutableFileObj:Virtual_Address>
+                                            </WinExecutableFileObj:Imported_Function>
+                                            <WinExecutableFileObj:Imported_Function>
+                                                <WinExecutableFileObj:Function_Name>GetCPInfoExA</WinExecutableFileObj:Function_Name>
+                                                <WinExecutableFileObj:Virtual_Address>0x40b0dc</WinExecutableFileObj:Virtual_Address>
+                                            </WinExecutableFileObj:Imported_Function>
+                                        </WinExecutableFileObj:Imported_Functions>
+                                    </WinExecutableFileObj:Import>
+                                    <WinExecutableFileObj:Import>
+                                        <WinExecutableFileObj:File_Name>user32.dll</WinExecutableFileObj:File_Name>
+                                        <WinExecutableFileObj:Imported_Functions>
+                                            <WinExecutableFileObj:Imported_Function>
+                                                <WinExecutableFileObj:Function_Name>DefWindowProcW</WinExecutableFileObj:Function_Name>
+                                                <WinExecutableFileObj:Virtual_Address>0x40b23f</WinExecutableFileObj:Virtual_Address>
+                                            </WinExecutableFileObj:Imported_Function>
+                                            <WinExecutableFileObj:Imported_Function>
+                                                <WinExecutableFileObj:Function_Name>InsertMenuA</WinExecutableFileObj:Function_Name>
+                                                <WinExecutableFileObj:Virtual_Address>0x40b243</WinExecutableFileObj:Virtual_Address>
+                                            </WinExecutableFileObj:Imported_Function>
+                                            <WinExecutableFileObj:Imported_Function>
+                                                <WinExecutableFileObj:Function_Name>GetMenuStringA</WinExecutableFileObj:Function_Name>
+                                                <WinExecutableFileObj:Virtual_Address>0x40b247</WinExecutableFileObj:Virtual_Address>
+                                            </WinExecutableFileObj:Imported_Function>
+                                            <WinExecutableFileObj:Imported_Function>
+                                                <WinExecutableFileObj:Function_Name>SetWindowsHookA</WinExecutableFileObj:Function_Name>
+                                                <WinExecutableFileObj:Virtual_Address>0x40b24b</WinExecutableFileObj:Virtual_Address>
+                                            </WinExecutableFileObj:Imported_Function>
+                                            <WinExecutableFileObj:Imported_Function>
+                                                <WinExecutableFileObj:Function_Name>MapVirtualKeyA</WinExecutableFileObj:Function_Name>
+                                                <WinExecutableFileObj:Virtual_Address>0x40b24f</WinExecutableFileObj:Virtual_Address>
+                                            </WinExecutableFileObj:Imported_Function>
+                                            <WinExecutableFileObj:Imported_Function>
+                                                <WinExecutableFileObj:Function_Name>WinHelpA</WinExecutableFileObj:Function_Name>
+                                                <WinExecutableFileObj:Virtual_Address>0x40b253</WinExecutableFileObj:Virtual_Address>
+                                            </WinExecutableFileObj:Imported_Function>
+                                            <WinExecutableFileObj:Imported_Function>
+                                                <WinExecutableFileObj:Function_Name>SetDlgItemTextA</WinExecutableFileObj:Function_Name>
+                                                <WinExecutableFileObj:Virtual_Address>0x40b257</WinExecutableFileObj:Virtual_Address>
+                                            </WinExecutableFileObj:Imported_Function>
+                                            <WinExecutableFileObj:Imported_Function>
+                                                <WinExecutableFileObj:Function_Name>GetClassInfoExA</WinExecutableFileObj:Function_Name>
+                                                <WinExecutableFileObj:Virtual_Address>0x40b25b</WinExecutableFileObj:Virtual_Address>
+                                            </WinExecutableFileObj:Imported_Function>
+                                            <WinExecutableFileObj:Imported_Function>
+                                                <WinExecutableFileObj:Function_Name>MessageBoxIndirectA</WinExecutableFileObj:Function_Name>
+                                                <WinExecutableFileObj:Virtual_Address>0x40b25f</WinExecutableFileObj:Virtual_Address>
+                                            </WinExecutableFileObj:Imported_Function>
+                                        </WinExecutableFileObj:Imported_Functions>
+                                    </WinExecutableFileObj:Import>
+                                    <WinExecutableFileObj:Import>
+                                        <WinExecutableFileObj:File_Name>gdi32.dll</WinExecutableFileObj:File_Name>
+                                        <WinExecutableFileObj:Imported_Functions>
+                                            <WinExecutableFileObj:Imported_Function>
+                                                <WinExecutableFileObj:Function_Name>CreateFontIndirectExA</WinExecutableFileObj:Function_Name>
+                                                <WinExecutableFileObj:Virtual_Address>0x40b30f</WinExecutableFileObj:Virtual_Address>
+                                            </WinExecutableFileObj:Imported_Function>
+                                            <WinExecutableFileObj:Imported_Function>
+                                                <WinExecutableFileObj:Function_Name>CreateDCA</WinExecutableFileObj:Function_Name>
+                                                <WinExecutableFileObj:Virtual_Address>0x40b313</WinExecutableFileObj:Virtual_Address>
+                                            </WinExecutableFileObj:Imported_Function>
+                                            <WinExecutableFileObj:Imported_Function>
+                                                <WinExecutableFileObj:Function_Name>GetTextExtentExPointA</WinExecutableFileObj:Function_Name>
+                                                <WinExecutableFileObj:Virtual_Address>0x40b317</WinExecutableFileObj:Virtual_Address>
+                                            </WinExecutableFileObj:Imported_Function>
+                                        </WinExecutableFileObj:Imported_Functions>
+                                    </WinExecutableFileObj:Import>
+                                </WinExecutableFileObj:Imports>
+                                <WinExecutableFileObj:Sections>
+                                    <WinExecutableFileObj:Section>
+                                        <WinExecutableFileObj:Section_Header>
+                                            <WinExecutableFileObj:Name>.fasm</WinExecutableFileObj:Name>
+                                            <WinExecutableFileObj:Virtual_Size>32768</WinExecutableFileObj:Virtual_Size>
+                                            <WinExecutableFileObj:Virtual_Address>0x00001000</WinExecutableFileObj:Virtual_Address>
+                                            <WinExecutableFileObj:Size_Of_Raw_Data>0x00002200</WinExecutableFileObj:Size_Of_Raw_Data>
+                                        </WinExecutableFileObj:Section_Header>
+                                        <WinExecutableFileObj:Entropy>
+                                            <WinExecutableFileObj:Value>7.97762007033</WinExecutableFileObj:Value>
+                                        </WinExecutableFileObj:Entropy>
+                                    </WinExecutableFileObj:Section>
+                                    <WinExecutableFileObj:Section>
+                                        <WinExecutableFileObj:Section_Header>
+                                            <WinExecutableFileObj:Name>.text</WinExecutableFileObj:Name>
+                                            <WinExecutableFileObj:Virtual_Size>4096</WinExecutableFileObj:Virtual_Size>
+                                            <WinExecutableFileObj:Virtual_Address>0x00009000</WinExecutableFileObj:Virtual_Address>
+                                            <WinExecutableFileObj:Size_Of_Raw_Data>0x00000a00</WinExecutableFileObj:Size_Of_Raw_Data>
+                                        </WinExecutableFileObj:Section_Header>
+                                        <WinExecutableFileObj:Entropy>
+                                            <WinExecutableFileObj:Value>7.73060048608</WinExecutableFileObj:Value>
+                                        </WinExecutableFileObj:Entropy>
+                                    </WinExecutableFileObj:Section>
+                                    <WinExecutableFileObj:Section>
+                                        <WinExecutableFileObj:Section_Header>
+                                            <WinExecutableFileObj:Name>.fasm</WinExecutableFileObj:Name>
+                                            <WinExecutableFileObj:Virtual_Size>852</WinExecutableFileObj:Virtual_Size>
+                                            <WinExecutableFileObj:Virtual_Address>0x0000a000</WinExecutableFileObj:Virtual_Address>
+                                            <WinExecutableFileObj:Size_Of_Raw_Data>0x00000400</WinExecutableFileObj:Size_Of_Raw_Data>
+                                        </WinExecutableFileObj:Section_Header>
+                                        <WinExecutableFileObj:Entropy>
+                                            <WinExecutableFileObj:Value>6.8269477202</WinExecutableFileObj:Value>
+                                        </WinExecutableFileObj:Entropy>
+                                    </WinExecutableFileObj:Section>
+                                    <WinExecutableFileObj:Section>
+                                        <WinExecutableFileObj:Section_Header>
+                                            <WinExecutableFileObj:Name>.data</WinExecutableFileObj:Name>
+                                            <WinExecutableFileObj:Virtual_Size>859</WinExecutableFileObj:Virtual_Size>
+                                            <WinExecutableFileObj:Virtual_Address>0x0000b000</WinExecutableFileObj:Virtual_Address>
+                                            <WinExecutableFileObj:Size_Of_Raw_Data>0x00000400</WinExecutableFileObj:Size_Of_Raw_Data>
+                                        </WinExecutableFileObj:Section_Header>
+                                        <WinExecutableFileObj:Entropy>
+                                            <WinExecutableFileObj:Value>4.12206915354</WinExecutableFileObj:Value>
+                                        </WinExecutableFileObj:Entropy>
+                                    </WinExecutableFileObj:Section>
+                                </WinExecutableFileObj:Sections>
+                            </cybox:Properties>
+                        </maecBundle:Object>
+                    </maecBundle:Objects>
+                </maecPackage:Bundle>
+                <maecPackage:Bundle defined_subject="false" content_type="static analysis tool output" id="Cuckoosandbox:bundle-7c3ccda5-951b-4c3e-88df-75d2f3f79e09" schema_version="4.1">
+                    <maecBundle:Objects>
+                        <maecBundle:Object id="Cuckoosandbox:object-d424fba7-d449-4552-9f8f-bde2c4fc0161">
+                            <cybox:Properties xsi:type="FileObj:FileObjectType">
+                                <FileObj:Extracted_Features>
+                                    <cyboxCommon:Strings>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>program cannot be run in DOS mode.</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>`q?02K^</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>9EXplV{</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>eg4_"d</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>)FKu/b</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>lvV/t!O</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>t.*;ANc</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>I,W,^k)</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>.'BQkP</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>~NAimJ</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>7FkA 4</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>^"JTgh</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>-Z]3Q`B</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>XEQ_`e</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>h"=@TLe</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>Eq:*o8</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>-"dFu}</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>191Uz$</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>-rk`pkLoe</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>-ZQd4o</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>#4EVgx</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>"3DUfw</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>!2CTev</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value> 1BSdu</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>?0ARct</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>):K\m~</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>(9J[l}</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>'8IZk|</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>&amp;7HYj{</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>%6GXiz</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>$5FWhy</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>#4EVgx</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>~?0ARct</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>n/@Qbs</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>0-IJrn</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>!|N^{|</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>I31[q~</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>7 Qe}u</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>=HF`E`</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>B&gt;H|aE`=</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>f=HQaE`</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>kernel32.dll</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>user32.dll</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>gdi32.dll</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>MoveFileWithProgressW</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>ScrollConsoleScreenBufferW</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>GetConsoleAliasExesLengthA</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>GetConsoleAliasesLengthA</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>ReadConsoleInputA</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>GetDiskFreeSpaceExA</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>SetConsoleNumberOfCommandsW</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>GetCommandLineW</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>WriteConsoleOutputCharacterW</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>GetFileAttributesExW</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>EnumSystemLocalesW</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>GetCommandLineW</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>GetCPInfoExA</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>DefWindowProcW</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>InsertMenuA</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>GetMenuStringA</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>SetWindowsHookA</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>MapVirtualKeyA</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>WinHelpA</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>SetDlgItemTextA</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>GetClassInfoExA</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>MessageBoxIndirectA</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>CreateFontIndirectExA</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>CreateDCA</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                        <cyboxCommon:String>
+                                            <cyboxCommon:String_Value>GetTextExtentExPointA</cyboxCommon:String_Value>
+                                        </cyboxCommon:String>
+                                    </cyboxCommon:Strings>
+                                </FileObj:Extracted_Features>
+                            </cybox:Properties>
+                        </maecBundle:Object>
+                    </maecBundle:Objects>
+                </maecPackage:Bundle>
+                <maecPackage:Bundle defined_subject="false" content_type="static analysis tool output" id="Cuckoosandbox:bundle-b565fd8f-f4a5-49cb-a194-08effb970a84" schema_version="4.1">
+                    <maecBundle:AV_Classifications>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>Bkav</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>1.3.0.4959</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140612</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>W32.Clod092.Trojan.c22b</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>MicroWorld-eScan</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>12.0.250.0</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140612</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>Trojan.Generic.350217</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>nProtect</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>2014-06-12.01</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140612</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>Trojan-Downloader/W32.Swizzor.14336</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>CMC</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>1.1.0.977</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140610</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>Generic.Win32.d8c23aad29!CMCRadar</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>CAT-QuickHeal</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>14.00</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140612</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>TrojanDownloader.Swizzor.gn</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>McAfee</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>6.0.4.564</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140612</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>Generic.dx!D8C23AAD292B</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>VIPRE</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>30236</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140612</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>Trojan.Win32.Generic!BT</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>K7AntiVirus</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>9.179.12387</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140612</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>Trojan ( 000344941 )</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>K7GW</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>9.179.12387</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140612</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>Trojan ( 000344941 )</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>TheHacker</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>6.8.0.5.466</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140612</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>Trojan/Downloader.Swizzor.gn</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>NANO-Antivirus</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>0.28.0.60253</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140612</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>Trojan.Win32.Swizzor.lbbu</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>F-Prot</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>4.7.1.166</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140612</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>W32/Downldr2.CVBU</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>Symantec</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>20131.1.5.61</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140612</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>Downloader.Lop</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>Norman</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>7.04.04</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140612</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>DLoader.OBVP</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>TrendMicro-HouseCall</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>9.700.0.1001</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140612</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>PAK_Generic.001</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>Avast</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>8.0.1489.320</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140612</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>Win32:Trojan-gen</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>Kaspersky</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>12.0.0.1225</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140612</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>HEUR:Trojan.Win32.Generic</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>BitDefender</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>7.2</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140612</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>Trojan.Generic.350217</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>Agnitum</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>5.5.1.3</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140610</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>Trojan.DL.Swizzor!cUxrSm5nln4</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>ByteHero</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>1.0.0.1</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140612</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>Virus.Win32.Heur.c</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>Rising</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>25.0.0.11</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140612</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>PE:Trojan.Win32.Generic.1273C193!309576083</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>Ad-Aware</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>12.0.163.0</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140612</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>Trojan.Generic.350217</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>Emsisoft</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>3.0.0.599</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140612</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>Trojan.Generic.350217 (B)</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>Comodo</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>18527</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140612</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>TrojWare.Win32.Zalup</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>F-Secure</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>11.0.19100.45</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140612</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>Trojan.Generic.350217</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>DrWeb</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>7.0.7.12100</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140612</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>Trojan.Packed.197</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>Zillya</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>2.0.0.1822</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140612</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>Downloader.Swizzor.Win32.12202</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>AntiVir</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>7.11.154.158</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140612</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>TR/Vundo.Gen</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>TrendMicro</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>9.740.0.1012</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140612</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>PAK_Generic.001</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>McAfee-GW-Edition</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>2013</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140612</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>Heuristic.BehavesLike.Win32.Suspicious-DTR.G</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>Jiangmin</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>16.0.100</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140612</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>TrojanDownloader.Swizzor.hrq</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>Kingsoft</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>2013.4.9.267</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140612</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>Win32.TrojDownloader.Swizzor.gn.(kcloud)</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>Microsoft</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>1.10600</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140612</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>VirTool:Win32/Obfuscator.BO</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>GData</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>24</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140612</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>Trojan.Generic.350217</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>Commtouch</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>5.4.1.7</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140612</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>W32/Downloader.AQZB-0252</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>AhnLab-V3</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>2014.06.13.00</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140612</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>Win-Trojan/Swizzor.14336</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>VBA32</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>3.12.26.0</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140612</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>Malware-Cryptor.General.3</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>Baidu-International</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>3.5.1.41473</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140612</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>Trojan.Win32.Swizzor.AD</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>ESET-NOD32</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>9936</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140612</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>Win32/Zalup</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>AVG</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>14.0.0.3964</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140612</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>Win32/Heur</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>Panda</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>10.0.3.5</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140612</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>Adware/Lop</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                        <maecBundle:AV_Classification>
+                            <cyboxCommon:Vendor>Qihoo-360</cyboxCommon:Vendor>
+                            <maecBundle:Engine_Version>1.0.0.1015</maecBundle:Engine_Version>
+                            <maecBundle:Definition_Version>20140612</maecBundle:Definition_Version>
+                            <maecBundle:Classification_Name>HEUR/Malware.QVM19.Gen</maecBundle:Classification_Name>
+                        </maecBundle:AV_Classification>
+                    </maecBundle:AV_Classifications>
+                </maecPackage:Bundle>
+            </maecPackage:Findings_Bundles>
+        </maecPackage:Malware_Subject>
+    </maecPackage:Malware_Subjects>
+</maecPackage:MAEC_Package>
